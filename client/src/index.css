@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Medical Blue - Primary Color */
+  --primary: #0F3A7D;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #0F3A7D;
+  --sidebar-primary-foreground: #FFFFFF;
+  
+  /* Medical Green - Accent Color */
+  --accent: #10B981;
+  --accent-foreground: #FFFFFF;
+  
+  /* Chart Colors */
+  --chart-1: #60A5FA;
+  --chart-2: #3B82F6;
+  --chart-3: #1D4ED8;
+  --chart-4: #0F3A7D;
+  --chart-5: #082F5E;
+  
+  /* Radius */
+  --radius: 0.75rem;
+  
+  /* Background & Foreground */
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  
+  /* Secondary Colors */
+  --secondary: #F3F4F6;
+  --secondary-foreground: #374151;
+  --muted: #E5E7EB;
+  --muted-foreground: #6B7280;
+  
+  /* Destructive */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Border & Input */
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #0F3A7D;
+  
+  /* Sidebar */
+  --sidebar: #F9FAFB;
+  --sidebar-foreground: #1F2937;
+  --sidebar-accent: #E0E7FF;
+  --sidebar-accent-foreground: #0F3A7D;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #0F3A7D;
+}
+
+.dark {
+  --primary: #3B82F6;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #0F172A; /* Deep Navy */
+  --foreground: #F8FAFC;
+  --card: #1E293B; /* Slate 800 */
+  --card-foreground: #F8FAFC;
+  --popover: #1E293B;
+  --popover-foreground: #F8FAFC;
+  --secondary: #334155;
+  --secondary-foreground: #CBD5E1;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #10B981;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #1E293B;
+  --ring: #3B82F6;
+  --chart-1: #60A5FA;
+  --chart-2: #3B82F6;
+  --chart-3: #1D4ED8;
+  --chart-4: #2563EB;
+  --chart-5: #1E40AF;
+  --sidebar: #0F172A;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: #334155;
+  --sidebar-ring: #3B82F6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+    font-family: 'Poppins', sans-serif;
+  }
+  h2 {
+    @apply text-3xl font-semibold;
+    font-family: 'Poppins', sans-serif;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+    font-family: 'Poppins', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
+
+
+/* ===== Smooth Scroll & Animations ===== */
+
+/* تحسين سلاسة التمرير */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* التمرير السلس للمتصفحات التي لا تدعم scroll-behavior */
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* تحسين استجابة التمرير */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 10px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* تحسين الانتقالات العامة */
+* {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-duration: 300ms;
+}
+
+/* حركات الظهور الانسيابية */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) !important;
+}
+
+/* تحسين الأداء والسلاسة */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* تحسين سلاسة الأزرار والعناصر التفاعلية */
+button, 
+a[href], 
+[role="button"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button:hover:not(:disabled),
+a[href]:hover,
+[role="button"]:hover:not([aria-disabled="true"]) {
+  transform: translateY(-3px) scale(1.02);
+  filter: brightness(1.05);
+}
+
+button:active:not(:disabled),
+a[href]:active,
+[role="button"]:active:not([aria-disabled="true"]) {
+  transform: translateY(-1px) scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* تأثير خاص للبطاقات عند التمرير */
+.accordion-item,
+.card-hover,
+.bg-white.dark\:bg-slate-800.rounded-xl {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.accordion-item:hover,
+.card-hover:hover,
+.bg-white.dark\:bg-slate-800.rounded-xl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* حركة نبض بسيطة للأيقونات الهامة */
+@keyframes soft-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-hover:hover {
+  animation: soft-pulse 2s infinite ease-in-out;
+}
+
+/* تحسين حركة الـ Backdrop */
+.backdrop-blur-sm {
+  transition: backdrop-filter 0.5s ease;
+}
+
+/* تحسين سلاسة الصور */
+img {
+  transition: opacity 0.3s ease-out;
+}
+
+/* تحسين سلاسة الظلال والخلفيات */
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تحسين سلاسة الألوان */
+.bg-white,
+.dark\\:bg-slate-950,
+.bg-blue-50,
+.dark\\:bg-blue-900\\/30 {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تحسين سلاسة النصوص والألوان */
+.text-gray-700,
+.dark\\:text-gray-300 {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تحسين سلاسة الحدود */
+.border,
+.border-r-4 {
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تحسين سلاسة الشفافية */
+.opacity-0,
+.opacity-50,
+.opacity-100 {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ===== Section Hero Image Styling ===== */
+
+/**
+ * .section-hero-image: نمط احترافي للصور في الأقسام الرئيسية
+ * - Border radius: 12px
+ * - Subtle glowing blue box-shadow
+ * - Responsive max-width: 100%
+ * - Object-fit: cover للحفاظ على النسبة
+ * - دعم كامل لـ RTL
+ */
+
+.section-hero-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  
+  /* Subtle glowing blue box-shadow */
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.15),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  /* Smooth transitions */
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark mode enhancement */
+.dark .section-hero-image {
+  box-shadow: 
+    0 0 25px rgba(59, 130, 246, 0.4),
+    0 0 50px rgba(59, 130, 246, 0.2),
+    0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effect */
+.section-hero-image:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 0 30px rgba(59, 130, 246, 0.5),
+    0 0 60px rgba(59, 130, 246, 0.3),
+    0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.dark .section-hero-image:hover {
+  box-shadow: 
+    0 0 35px rgba(59, 130, 246, 0.6),
+    0 0 70px rgba(59, 130, 246, 0.4),
+    0 15px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* Figure and figcaption styling */
+figure.section-hero-figure {
+  margin: 2rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+figure.section-hero-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+figcaption.section-hero-caption {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-align: center;
+  font-style: italic;
+  padding: 0 1rem;
+}
+
+.dark figcaption.section-hero-caption {
+  color: #94A3B8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-hero-image {
+    border-radius: 10px;
+    box-shadow: 
+      0 0 15px rgba(59, 130, 246, 0.25),
+      0 0 30px rgba(59, 130, 246, 0.1),
+      0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark .section-hero-image {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.35),
+      0 0 40px rgba(59, 130, 246, 0.15),
+      0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  .section-hero-image:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  figure.section-hero-figure {
+    margin: 1.5rem 0;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .section-hero-image {
+  direction: rtl;
+}
+
+[dir="rtl"] figcaption.section-hero-caption {
+  text-align: center;
+  direction: rtl;
+}
+
+/* Loading state */
+.section-hero-image[loading="lazy"] {
+  background-color: var(--muted);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Focus state for accessibility */
+.section-hero-image:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .section-hero-image {
+    box-shadow: none;
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+}
