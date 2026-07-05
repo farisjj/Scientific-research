@@ -22,17 +22,17 @@ export function ResearchEthicsSection() {
 
       <AccordionSection title="المبادئ الأساسية التي يجب أن تعرفها">
         <div className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#10B981] dark:text-green-400">1. الـ Informed Consent</strong>
             <p className="mt-2">المشارك يجب أن يفهم بالضبط ما هو البحث، وما هي الفوائد والمخاطر، وأنه يستطيع الانسحاب في أي وقت يريده دون أي مسؤولية.</p>
           </div>
 
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#10B981] dark:text-green-400">2. السرية والخصوصية (Confidentiality)</strong>
             <p className="mt-2">بيانات الناس أمانة. ممنوع كتابة أسماء حقيقية؛ استخدم أكواداً أو أرقاماً (مثلاً Patient A, Patient B).</p>
           </div>
 
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#10B981] dark:text-green-400">3. عدم الإضرار (Non-Maleficence)</strong>
             <p className="mt-2">بحثك يجب ألا يسبب أي ضرر، لا جسدي ولا حتى نفسي أو اجتماعي للمشاركين.</p>
           </div>
@@ -83,19 +83,19 @@ export function ReferenceManagementSection() {
 
       <AccordionSection title="أفضل الأدوات المجربة">
         <div className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#0F3A7D] dark:text-blue-400">Mendeley</strong>
             <p className="mt-2">المفضل عند أغلب الطلاب. سهل، ويوجد له تطبيق للهاتف، ويتصل مع Word بسلاسة.</p>
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#0F3A7D] dark:text-blue-400">Zotero</strong>
             <p className="mt-2">مجاني بالكامل (Open Source) وقوي جداً، خاصة لو كنت تجمع مراجع من المتصفح مباشرة.</p>
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg category-card">
             <strong className="text-[#0F3A7D] dark:text-blue-400">EndNote</strong>
-            <p className="mt-2">الخيار الثقيل والاحترافي، ولكنه غالباً يحتاج اشتراكاً بمال (تأكد إذا كانت جامعتك توفره مجاناً).</p>
+            <p className="mt-2">          الخيار الثقيل والاحترافي، ولكنه غالباً يحتاج اشتراكاً بمال (تأكد إذا كانت جامعتك توفره مجاناً).</p>
           </div>
         </div>
       </AccordionSection>
@@ -179,22 +179,22 @@ export function PracticalTipsSection() {
       <SectionHeader id="practical-tips" title="نصائح عملية من الآخر" />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">ابدأ صغيراً (Start Small)</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400">لا تحاول اكتشاف علاج للسرطان من أول بحث. ابدأ بـ <KeywordBadge>Case Report</KeywordBadge> أو <KeywordBadge>Cross-sectional</KeywordBadge> بسيطة لكي تتعلم الخطوات وتكسر حاجز الخوف.</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-loose">لا تحاول اكتشاف علاج للسرطان من أول بحث. ابدأ بـ <KeywordBadge>Case Report</KeywordBadge> أو <KeywordBadge>Cross-sectional</KeywordBadge> بسيطة لكي تتعلم الخطوات وتكسر حاجز الخوف.</p>
         </div>
 
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">الفريق الصحيح (The Right Team)</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400">الـ Research عمل جماعي. ابحث عن زملاء مهتمين ومجتهدين، وابعد عن الركاب الذين يريدون فقط وضع أسمائهم دون عمل.</p>
         </div>
 
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">الصبر (Patience)</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400">النشر يستغرق وقتاً؛ من شهور لسنة أحياناً. لا تحبط إذا رُفضت أول مرة، هذا جزء طبيعي من اللعبة. عدل وأرسل لمجلة ثانية.</p>
         </div>
 
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">الـ Mentor</h4>
           <p className="text-sm text-gray-600 dark:text-gray-400">حاول أن تجد دكتوراً استشارياً أو مقيماً شاطراً يوجهك. وجود مرشد يختصر عليك سنين من التخبط والضياع.</p>
         </div>

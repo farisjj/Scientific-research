@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ChevronLeft, RotateCcw, CheckCircle2, Info, Lightbulb } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, RotateCcw, CheckCircle2, Info, Lightbulb, X } from 'lucide-react';
 
 interface DecisionOption {
   label: string;
@@ -109,6 +109,29 @@ export function BiostatisticsDecisionTree() {
   const [currentNodeId, setCurrentNodeId] = useState('start');
   const [history, setHistory] = useState<string[]>([]);
   const [result, setResult] = useState<DecisionOption | null>(null);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tooltipRef.current && 
+        !tooltipRef.current.contains(event.target as Node) &&
+        iconRef.current &&
+        !iconRef.current.contains(event.target as Node)
+      ) {
+        setShowTooltip(false);
+      }
+    };
+
+    if (showTooltip) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showTooltip]);
 
   const currentNode = decisionTree[currentNodeId];
 
@@ -360,7 +383,41 @@ export function BiostatisticsDecisionTree() {
 
       <div className="tree-container" dir="rtl">
         <div className="tree-header">
-          <h3><Info className="w-6 h-6" /> الخريطة الإحصائية التفاعلية</h3>
+          <h3 className="relative inline-flex items-center gap-2">
+            <button 
+              ref={iconRef}
+              onClick={() => setShowTooltip(!showTooltip)}
+              className="p-1 hover:bg-white/20 rounded-full transition-colors cursor-pointer focus:outline-none"
+              aria-label="معلومات إضافية"
+            >
+              <Info className="w-6 h-6" />
+            </button>
+            <span>الخريطة الإحصائية التفاعلية</span>
+            
+            {showTooltip && (
+              <div 
+                ref={tooltipRef}
+                className="absolute top-full right-0 mt-3 w-72 sm:w-80 p-4 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 z-[100] animate-in fade-in zoom-in duration-200 text-right"
+                style={{ filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.15))' }}
+              >
+                <div className="flex justify-between items-start mb-2">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
+                    <Lightbulb className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <button 
+                    onClick={() => setShowTooltip(false)}
+                    className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="text-sm leading-relaxed font-normal">
+                  الاختبار الإحصائي هو وسيلة رياضية تحدد ما إذا كانت نتائج بحثك حقيقية (ذات دلالة) أم أنها حدثت بمحض الصدفة. هذه الخريطة التفاعلية ستطرح عليك أسئلة بسيطة عن نوع بياناتك لترشدك فوراً للاختبار الصحيح (مثل T-test أو Chi-Square) دون الحاجة لخبرة مسبقة في الإحصاء.
+                </p>
+                <div className="absolute -top-2 right-4 w-4 h-4 bg-white dark:bg-slate-800 border-t border-r border-slate-200 dark:border-slate-700 rotate-[-45deg]"></div>
+              </div>
+            )}
+          </h3>
           <p>أجب على الأسئلة للوصول للاختبار الإحصائي المناسب لبحثك</p>
         </div>
 

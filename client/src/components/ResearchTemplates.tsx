@@ -134,11 +134,11 @@ export function ResearchTemplates() {
 </html>
     `;
 
-    const blob = new Blob([content], { type: 'application/msword' });
+    const blob = new Blob([content], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Case_Report_Template_AR.doc';
+    link.download = 'Case_Report_Template_AR.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -178,7 +178,7 @@ export function ResearchTemplates() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Data_Extraction_Template_AR.csv';
+    link.download = 'Systematic_Review_Data_Extraction_Sheet_AR.xlsx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -194,16 +194,34 @@ export function ResearchTemplates() {
       title: 'قالب كتابة تقرير حالة (Case Report)',
       description: 'ملف مقسم حسب هيكل IMRAD جاهز للتعبئة لتوفير وقت التنسيق. يتضمن جميع الأقسام الضرورية من صفحة العنوان إلى المراجع.',
       icon: <FileText className="w-8 h-8" />,
-      fileType: '.doc',
-      action: generateCaseReportDoc,
+      fileType: '.docx',
+      action: () => {
+        const link = document.createElement('a');
+        link.href = '/templates/BMJ_Clinical_Case_Report_Template.docx';
+        link.download = 'BMJ_Clinical_Case_Report_Template.docx';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setDownloadStatus(prev => ({ ...prev, caseReport: true }));
+        setTimeout(() => setDownloadStatus(prev => ({ ...prev, caseReport: false })), 2000);
+      },
     },
     {
       id: 'dataExtraction',
       title: 'شيت استخراج البيانات (Data Extraction Sheet)',
       description: 'ملف مصمم لتفريغ بيانات الدراسات لعمل الـ Systematic Reviews و Meta-analysis. يحتوي على جميع الأعمدة الضرورية لجمع البيانات بشكل منظم.',
       icon: <Table2 className="w-8 h-8" />,
-      fileType: '.csv',
-      action: generateDataExtractionCSV,
+      fileType: '.xlsx',
+      action: () => {
+        const link = document.createElement('a');
+        link.href = '/templates/Systematic_Review_Data_Extraction_Sheet.xlsx';
+        link.download = 'Systematic_Review_Data_Extraction_Sheet.xlsx';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setDownloadStatus(prev => ({ ...prev, dataExtraction: true }));
+        setTimeout(() => setDownloadStatus(prev => ({ ...prev, dataExtraction: false })), 2000);
+      },
     },
   ];
 

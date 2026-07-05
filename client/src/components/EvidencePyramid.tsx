@@ -61,14 +61,37 @@ const levels: PyramidLevel[] = [
 export function EvidencePyramid() {
   const [hoveredLevel, setHoveredLevel] = useState<PyramidLevel | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<PyramidLevel | null>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const handleLevelClick = (level: PyramidLevel) => {
-    // على الهواتف: تبديل الاختيار
+  const handleMouseMove = (e: React.MouseEvent) => {
+    requestAnimationFrame(() => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    });
+  };
+
+  const handleGlobalMouseLeave = () => {
+    setHoveredLevel(null);
+  };
+
+  const handleLevelClick = (levelId: string) => {
+    // خريطة المعرفات لضمان التوجيه الصحيح للأقسام الموجودة في الصفحة
+    const idMap: Record<string, string> = {
+      'systematic-reviews': 'systematic-reviews',
+      'rct': 'rct-section',
+      'cohort': 'cohort-section',
+      'case-control': 'case-control-section',
+      'case-reports': 'case-reports'
+    };
+
+    const targetId = idMap[levelId] || levelId;
+    
     if (window.innerWidth < 1024) {
-      setSelectedLevel(selectedLevel?.id === level.id ? null : level);
+      const level = levels.find(l => l.id === levelId);
+      if (level) {
+        setSelectedLevel(selectedLevel?.id === level.id ? null : level);
+      }
     } else {
-      // على أجهزة الحاسوب: الانتقال للقسم
-      const element = document.getElementById(level.id);
+      const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
@@ -85,17 +108,37 @@ export function EvidencePyramid() {
   const displayLevel = window.innerWidth < 1024 ? selectedLevel : hoveredLevel;
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto my-8 sm:my-12 bg-white dark:bg-slate-900 p-4 sm:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 overflow-hidden">
-      <h3 className="text-xl sm:text-2xl font-bold text-[#0F3A7D] dark:text-blue-400 mb-6 sm:mb-8 text-center">
+    <div 
+      className="relative w-full max-w-4xl mx-auto my-8 sm:my-12 bg-white dark:bg-slate-900 p-4 sm:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-800 overflow-hidden" 
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleGlobalMouseLeave}
+    >
+      <h3 className="text-xl sm:text-2xl font-bold text-[#0F3A7D] dark:text-blue-400 mb-6 sm:mb-8 text-center pointer-events-none">
         هرم الأدلة الطبية التفاعلي
       </h3>
       
+      {/* Floating Tooltip for Desktop */}
+      {hoveredLevel && window.innerWidth >= 1024 && (
+        <div 
+          className="fixed z-[999] pointer-events-none bg-slate-900/95 dark:bg-white/95 text-white dark:text-slate-900 p-3 rounded-lg shadow-2xl max-w-xs border border-white/20 dark:border-slate-200 transition-opacity duration-200"
+          style={{ 
+            left: `${mousePos.x + 15}px`, 
+            top: `${mousePos.y + 15}px`,
+            direction: 'rtl'
+          }}
+        >
+          <p className="font-bold text-sm mb-1">{hoveredLevel.title}</p>
+          <p className="text-xs leading-relaxed opacity-90">{hoveredLevel.description}</p>
+          <p className="text-[10px] mt-2 text-blue-400 dark:text-blue-600 font-semibold">انقر للانتقال للقسم التفصيلي ←</p>
+        </div>
+      )}
+
       <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-12">
         {/* SVG Pyramid */}
-        <div className="relative w-full lg:w-3/5 aspect-[2/1]">
+        <div className="relative w-full lg:w-3/5 aspect-[2/1] z-10">
           <svg
             viewBox="0 0 600 320"
-            className="w-full h-full drop-shadow-2xl dark:drop-shadow-[0_10px_15px_rgba(59,130,246,0.3)]"
+            className="w-full h-full drop-shadow-2xl dark:drop-shadow-[0_10px_15px_rgba(59,130,246,0.3)] overflow-visible"
             style={{ filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.1))' }}
           >
             {/* Pyramid Peak */}
@@ -122,7 +165,7 @@ export function EvidencePyramid() {
                 className="transition-all duration-300 cursor-pointer hover:stroke-white hover:stroke-2 active:stroke-white active:stroke-2"
                 onMouseEnter={() => setHoveredLevel(level)}
                 onMouseLeave={() => setHoveredLevel(null)}
-                onClick={() => handleLevelClick(level)}
+                onClick={() => handleLevelClick(level.id)}
               />
             ))}
 
@@ -134,7 +177,7 @@ export function EvidencePyramid() {
               const line2 = titleParts.length > 1 ? titleParts[1] : '';
 
               return (
-                <g key={`label-${level.id}`}>
+                <g key={`label-${level.id}`} className="pointer-events-none">
                   {/* السطر الأول */}
                   <text
                     x="300"
@@ -195,32 +238,12 @@ export function EvidencePyramid() {
                 <p className="text-sm sm:text-base text-gray-700 dark:text-gray-200 leading-relaxed mb-3 sm:mb-4">
                   {displayLevel.description}
                 </p>
-                {window.innerWidth >= 1024 && (
-                  <button 
-                    onClick={() => {
-                      const element = document.getElementById(displayLevel.id);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 justify-end"
-                  >
-                    اقرأ المزيد عن هذا القسم ←
-                  </button>
-                )}
-                {window.innerWidth < 1024 && (
-                  <button 
-                    onClick={() => {
-                      const element = document.getElementById(displayLevel.id);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 justify-end w-full"
-                  >
-                    اقرأ المزيد عن هذا القسم ←
-                  </button>
-                )}
+                <button 
+                  onClick={() => handleLevelClick(displayLevel.id)}
+                  className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 justify-end w-full lg:w-auto"
+                >
+                  اقرأ المزيد عن هذا القسم ←
+                </button>
               </div>
             ) : (
               <div className="text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400 italic">

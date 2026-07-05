@@ -32,6 +32,9 @@ import {
   CrossSectionalSection,
   SystematicReviewsSection,
   JournalsPublishingSection,
+  RCTSection,
+  CohortSection,
+  CaseControlSection,
 } from './AdditionalSections';
 import {
   ResearchEthicsSection,
@@ -104,11 +107,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F3A7D]/80 to-transparent"></div>
           
           {/* Content */}
-          <div className="relative z-10 text-white text-right px-4 sm:px-6 md:pr-16 lg:pr-24 w-full max-w-5xl flex flex-col items-start">
+          <div className="relative z-10 text-white text-center px-4 sm:px-6 w-full max-w-5xl flex flex-col items-center mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 leading-tight drop-shadow-md" style={{ animation: 'fadeInUp 0.8s ease-out' }}>
               اصنع بصمتك في عالم الأبحاث الطبية
             </h1>
-            <div className="w-12 sm:w-16 h-1 bg-blue-400 mb-3 sm:mb-6 rounded-full" style={{ animation: 'fadeInUp 0.8s ease-out 0.1s both' }} />
+            <div className="w-20 sm:w-24 h-1 bg-blue-400 mb-4 sm:mb-6 rounded-full mx-auto" style={{ animation: 'fadeInUp 0.8s ease-out 0.1s both' }} />
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-50/90 leading-relaxed max-w-2xl font-normal drop-shadow-sm" style={{ animation: 'fadeInUp 0.8s ease-out 0.2s both' }}>
               دليلك الشامل لبناء أساس بحثي متين. أدوات، منهجيات، وخطوات عملية تنقلك من مقاعد الدراسة إلى مصاف الباحثين المتميزين.
             </p>
@@ -124,34 +127,38 @@ export default function Home() {
               <img src="/importance.jpg" alt="أهمية البحث العلمي" className="w-full h-auto object-contain rounded-xl mb-6 shadow-lg" />
             </ScrollReveal>
 
-            <AccordionSection
-              title="ماذا يعني Medical Research أصلاً؟"
-              defaultOpen={true}
-            >
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                الـ Research ليس بالضرورة أن يكون معقداً أو في مختبرات كيميائية وأنابيب اختبار. ببساطة هو أن تسأل سؤالاً ذكياً وتبحث عن إجابته بطريقة صحيحة ومنهجية (Systematic Approach).
-              </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
-                هو الأداة التي نطور بها الطب؛ سواء اكتشفنا علاجاً جديداً، أو حسنّا طريقة تشخيص، أو حتى فهمنا طبيعة مرض معين وكيف يتفاعل المرضى معه بشكل أفضل.
-              </p>
-              <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-600 dark:border-blue-400 rounded">
-                <p className="text-blue-900 dark:text-blue-200">
-                  الـ Research ليس رفاهية للطبيب الطموح، هو ضرورة. كل استشاري ناجح في العالم بدأ بسؤال وفضول علمي بسيط.
+            <ScrollReveal direction="up" delay={200}>
+              <AccordionSection
+                title="ماذا يعني Medical Research أصلاً؟"
+                defaultOpen={true}
+              >
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  الـ Research ليس بالضرورة أن يكون معقداً أو في مختبرات كيميائية وأنابيب اختبار. ببساطة هو أن تسأل سؤالاً ذكياً وتبحث عن إجابته بطريقة صحيحة ومنهجية (Systematic Approach).
                 </p>
-              </div>
-            </AccordionSection>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
+                  هو الأداة التي نطور بها الطب؛ سواء اكتشفنا علاجاً جديداً، أو حسنّا طريقة تشخيص، أو حتى فهمنا طبيعة مرض معين وكيف يتفاعل المرضى معه بشكل أفضل.
+                </p>
+                <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 border-r-4 border-blue-600 dark:border-blue-400 rounded">
+                  <p className="text-blue-900 dark:text-blue-200">
+                    الـ Research ليس رفاهية للطبيب الطموح، هو ضرورة. كل استشاري ناجح في العالم بدأ بسؤال وفضول علمي بسيط.
+                  </p>
+                </div>
+              </AccordionSection>
+            </ScrollReveal>
 
-            <AccordionSection title="لماذا الـ Research مهم لطلاب الطب؟">
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                في عالم الطب حالياً، شطارتك كطبيب لا تكفي وحدها، يجب أن تكون باحثاً أيضاً. الـ Research هو الورقة الرابحة في يدك لهذه الأسباب:
-              </p>
-              <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">الـ CV وعنق الزجاجة:</span> هو الذي يميزك عن آلاف المتقدمين لبرامج الإقامة (Residency Programs) التنافسية محلياً ودولياً مثل الـ USMLE والـ PLAB.</li>
-                <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">إتقان الـ Evidence-Based Medicine (EBM):</span> تتعلم كيف تقرأ الـ Papers بنظرة ناقدة وتعرف كيف تستخرج المعلومة الصحيحة والدقيقة لتطبقها على مرضاك.</li>
-                <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">بناء شبكة علاقات (Networking):</span> يفتح لك أبواب العمل المباشر مع Consultants واستشاريين كبار، وهذا يسهل عليك الحصول على رسائل توصية (LoRs) قوية.</li>
-                <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">مهارات العمل الجماعي (Teamwork):</span> تتعلم كيف تعمل ضمن فريق، وتوزع المهام، وتتواصل بفعالية؛ وهي أهم مهارات الطبيب الناجح.</li>
-              </ul>
-            </AccordionSection>
+            <ScrollReveal direction="up" delay={300}>
+              <AccordionSection title="لماذا الـ Research مهم لطلاب الطب؟">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  في عالم الطب حالياً، شطارتك كطبيب لا تكفي وحدها، يجب أن تكون باحثاً أيضاً. الـ Research هو الورقة الرابحة في يدك لهذه الأسباب:
+                </p>
+                <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">الـ CV وعنق الزجاجة:</span> هو الذي يميزك عن آلاف المتقدمين لبرامج الإقامة (Residency Programs) التنافسية محلياً ودولياً مثل الـ USMLE والـ PLAB.</li>
+                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">إتقان الـ Evidence-Based Medicine (EBM):</span> تتعلم كيف تقرأ الـ Papers بنظرة ناقدة وتعرف كيف تستخرج المعلومة الصحيحة والدقيقة لتطبقها على مرضاك.</li>
+                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">بناء شبكة علاقات (Networking):</span> يفتح لك أبواب العمل المباشر مع Consultants واستشاريين كبار، وهذا يسهل عليك الحصول على رسائل توصية (LoRs) قوية.</li>
+                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">مهارات العمل الجماعي (Teamwork):</span> تتعلم كيف تعمل ضمن فريق، وتوزع المهام، وتتواصل بفعالية؛ وهي أهم مهارات الطبيب الناجح.</li>
+                </ul>
+              </AccordionSection>
+            </ScrollReveal>
 
             <AccordionSection title="مثال من الواقع">
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -168,26 +175,30 @@ export default function Home() {
               <img src="/cv_impact.jpg" alt="تأثير البحث على السيرة الذاتية" className="w-full h-auto object-contain rounded-xl mb-6 shadow-lg" />
             </ScrollReveal>
 
-            <AccordionSection
-              title="كيف يرفع البحث قيمتك الأكاديمية؟"
-              defaultOpen={true}
-            >
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                الـ CV الطبي ليس مجرد قائمة بالأشياء التي فعلتها، هو القصة التي تحكي من أنت كطالب طب طموح.
-              </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
-                لما تضيف Paper منشورة لـ CV الخاص بك، أنت لا تقول فقط عندي خبرة، أنت تثبت أنك قادر على التفكير في مشكلة، وتصميم حل، وتنفيذه والوصول لنتائج بنجاح.
-              </p>
-            </AccordionSection>
+            <ScrollReveal direction="up" delay={200}>
+              <AccordionSection
+                title="كيف يرفع البحث قيمتك الأكاديمية؟"
+                defaultOpen={true}
+              >
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  الـ CV الطبي ليس مجرد قائمة بالأشياء التي فعلتها، هو القصة التي تحكي من أنت كطالب طب طموح.
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
+                  لما تضيف Paper منشورة لـ CV الخاص بك، أنت لا تقول فقط عندي خبرة، أنت تثبت أنك قادر على التفكير في مشكلة، وتصميم حل، وتنفيذه والوصول لنتائج بنجاح.
+                </p>
+              </AccordionSection>
+            </ScrollReveal>
 
-            <AccordionSection title="الوضع في الأردن">
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                في المستشفيات الكبيرة والتنافسية في الأردن، ستجد عشرات الطلاب معدلاتهم قريبة من بعضها. عندما يرى الـ Interviewer أن لديك أبحاثاً منشورة، تتحول المقابلة من مجرد تسميع معلومات إلى دردشة علمية ممتعة عن شغلك، وهذا يعطيك أولوية كبيرة.
-              </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
-                أغلب المراكز والمستشفيات حالياً صارت تعتمد نظام نقاط (Points System) لتقييم المتقدمين، ووجود ورقة علمية باسمك يعطيك نقاطاً إضافية ترفع ترتيبك فوراً فوق منافسيك.
-              </p>
-            </AccordionSection>
+            <ScrollReveal direction="up" delay={300}>
+              <AccordionSection title="الوضع في الأردن">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  في المستشفيات الكبيرة والتنافسية في الأردن، ستجد عشرات الطلاب معدلاتهم قريبة من بعضها. عندما يرى الـ Interviewer أن لديك أبحاثاً منشورة، تتحول المقابلة من مجرد تسميع معلومات إلى دردشة علمية ممتعة عن شغلك، وهذا يعطيك أولوية كبيرة.
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
+                  أغلب المراكز والمستشفيات حالياً صارت تعتمد نظام نقاط (Points System) لتقييم المتقدمين، ووجود ورقة علمية باسمك يعطيك نقاطاً إضافية ترفع ترتيبك فوراً فوق منافسيك.
+                </p>
+              </AccordionSection>
+            </ScrollReveal>
 
             <AccordionSection title="أمريكا - مسار USMLE">
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -247,40 +258,95 @@ export default function Home() {
           </section>
 
           <div id="research-types" className="scroll-mt-20">
-            <WritingPaperSection />
-            <CaseReportsSection />
+            <ScrollReveal direction="up" delay={0}>
+              <WritingPaperSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <CaseReportsSection />
+            </ScrollReveal>
             
             <section id="sample-size-calc" className="scroll-mt-20">
-              <SampleSizeCalculator />
+              <ScrollReveal direction="up" delay={200}>
+                <SampleSizeCalculator />
+              </ScrollReveal>
             </section>
 
-            <CrossSectionalSection />
-            <SystematicReviewsSection />
+            <ScrollReveal direction="up" delay={100}>
+              <CrossSectionalSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <SystematicReviewsSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <RCTSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <CohortSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <CaseControlSection />
+            </ScrollReveal>
           </div>
 
           <div id="resources" className="scroll-mt-20">
-            <JournalsPublishingSection />
-            <ResearchEthicsSection />
-            <ReferenceManagementSection />
+            <ScrollReveal direction="up" delay={100}>
+              <JournalsPublishingSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <ResearchEthicsSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <ReferenceManagementSection />
+            </ScrollReveal>
           </div>
 
           <div id="tips" className="scroll-mt-20">
-            <CommonMistakesSection />
-            <PracticalTipsSection />
-            <AuthorshipAndEthicsSection />
+            <ScrollReveal direction="up" delay={100}>
+              <CommonMistakesSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <PracticalTipsSection />
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={100}>
+              <AuthorshipAndEthicsSection />
+            </ScrollReveal>
           </div>
-          <AuthorshipRolesSection />
-          <JournalClassificationsSection />
-          <PredatoryJournalsSection />
-          <FundingStrategiesSection />
-          <AccessingPaidResearchSection />
-          <PortfolioStrategiesSection />
-          <ResearchSpecializationSection />
-          <DigitalIdentitySection />
-          <ResearchTemplatesSection />
-          <BiostatisticsDecisionTreeSection />
-          <StatisticalToolsSection />
-          <WritingStrategySection />
+          <ScrollReveal direction="up" delay={100}>
+            <AuthorshipRolesSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <JournalClassificationsSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <PredatoryJournalsSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <FundingStrategiesSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <AccessingPaidResearchSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <PortfolioStrategiesSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <ResearchSpecializationSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <DigitalIdentitySection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <ResearchTemplatesSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <BiostatisticsDecisionTreeSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <StatisticalToolsSection />
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={100}>
+            <WritingStrategySection />
+          </ScrollReveal>
         </div>
       </main>
       <BackToTopButton />

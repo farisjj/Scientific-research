@@ -9,30 +9,32 @@ interface SearchResult {
 }
 
 const searchData: SearchResult[] = [
-  { id: 'intro', title: 'مدخل إلى البحث العلمي', keywords: ['بحث', 'علمي', 'طب', 'medical', 'research'], section: 'intro' },
-  { id: 'cv-impact', title: 'تأثير البحث على السيرة الذاتية', keywords: ['سيرة ذاتية', 'cv', 'usmle', 'plab', 'eras'], section: 'cv-impact' },
-  { id: 'hierarchy', title: 'هرم الأدلة الطبية', keywords: ['هرم', 'أدلة', 'evidence', 'pyramid', 'ebm'], section: 'hierarchy' },
-  { id: 'time-management', title: 'التوفيق بين الدراسة والبحث', keywords: ['توفيق', 'دراسة', 'وقت', 'time management'], section: 'time-management' },
-  { id: 'writing-paper', title: 'كتابة الورقة العلمية', keywords: ['كتابة', 'ورقة', 'writing', 'paper', 'introduction', 'methods'], section: 'writing-paper' },
-  { id: 'case-reports', title: 'تقارير الحالة', keywords: ['حالة', 'case report', 'case series', 'تقرير'], section: 'case-reports' },
-  { id: 'cross-sectional', title: 'الدراسات المقطعية', keywords: ['دراسات', 'مقطعية', 'cross-sectional', 'استبيان'], section: 'cross-sectional' },
-  { id: 'systematic-reviews', title: 'المراجعات المنهجية', keywords: ['مراجعة', 'منهجية', 'systematic review', 'meta-analysis'], section: 'systematic-reviews' },
-  { id: 'journals-publishing', title: 'المجلات والنشر', keywords: ['مجلة', 'نشر', 'journal', 'publishing', 'pubmed', 'scopus'], section: 'journals-publishing' },
-  { id: 'research-ethics', title: 'أخلاقيات البحث', keywords: ['أخلاقيات', 'ethics', 'irb', 'consent'], section: 'research-ethics' },
-  { id: 'reference-management', title: 'إدارة المراجع', keywords: ['مراجع', 'references', 'mendeley', 'zotero'], section: 'reference-management' },
-  { id: 'common-mistakes', title: 'الأخطاء الشائعة', keywords: ['أخطاء', 'mistakes', 'common errors'], section: 'common-mistakes' },
-  { id: 'practical-tips', title: 'نصائح عملية', keywords: ['نصائح', 'tips', 'practical', 'advice'], section: 'practical-tips' },
-  { id: 'authorship-ethics', title: 'التأليف والنزاهة', keywords: ['تأليف', 'authorship', 'integrity', 'نزاهة'], section: 'authorship-ethics' },
-  { id: 'authorship-roles', title: 'أدوار التأليف', keywords: ['أدوار', 'roles', 'author', 'contributor'], section: 'authorship-roles' },
-  { id: 'journal-classifications', title: 'تصنيفات المجلات', keywords: ['تصنيفات', 'classifications', 'impact factor'], section: 'journal-classifications' },
-  { id: 'predatory-journals', title: 'المجلات المفترسة', keywords: ['مفترسة', 'predatory', 'journals', 'scam'], section: 'predatory-journals' },
-  { id: 'funding-strategies', title: 'استراتيجيات التمويل', keywords: ['تمويل', 'funding', 'grant', 'scholarship'], section: 'funding-strategies' },
-  { id: 'accessing-paid-research', title: 'الحصول على الأبحاث', keywords: ['أبحاث', 'accessing', 'paid', 'research'], section: 'accessing-paid-research' },
-  { id: 'portfolio-strategies', title: 'بناء Portfolio البحثي', keywords: ['portfolio', 'بناء', 'research profile'], section: 'portfolio-strategies' },
-  { id: 'research-specialization', title: 'General vs Sub-specialty', keywords: ['تخصص', 'specialization', 'general'], section: 'research-specialization' },
-  { id: 'digital-identity', title: 'الهوية البحثية الرقمية', keywords: ['هوية', 'digital', 'orcid', 'google scholar'], section: 'digital-identity' },
-  { id: 'statistical-tools', title: 'برامج التحليل الإحصائي', keywords: ['إحصائي', 'statistical', 'spss', 'r', 'python', 'stata'], section: 'statistical-tools' },
-  { id: 'writing-strategy', title: 'استراتيجية الكتابة', keywords: ['كتابة', 'strategy', 'writing', 'structure'], section: 'writing-strategy' },
+  { id: 'intro', title: 'مدخل إلى البحث العلمي', keywords: ['بحث', 'علمي', 'طب', 'medical', 'research', 'question', 'methodology', 'scientific', 'طرح سؤال', 'منهجية', 'PICO', 'بيكو'], section: 'intro' },
+  { id: 'cv-impact', title: 'تأثير البحث على السيرة الذاتية', keywords: ['سيرة ذاتية', 'cv', 'usmle', 'plab', 'eras', 'match', 'residency', 'التميز', 'الأكاديمي', 'المهني', 'النقاط'], section: 'cv-impact' },
+  { id: 'hierarchy', title: 'هرم الأدلة الطبية', keywords: ['هرم', 'أدلة', 'evidence', 'pyramid', 'ebm', 'أقوى دليل', 'levels of evidence', 'study design', 'الدراسات', 'الأبحاث'], section: 'hierarchy' },
+  { id: 'time-management', title: 'التوفيق بين الدراسة والبحث', keywords: ['توفيق', 'دراسة', 'وقت', 'time management', 'balance', 'schedule', 'planning', 'إدارة الوقت', 'الجدول الزمني'], section: 'time-management' },
+  { id: 'writing-paper', title: 'كتابة الورقة العلمية', keywords: ['كتابة', 'ورقة', 'writing', 'paper', 'introduction', 'methods', 'manuscript', 'abstract', 'المقالة', 'الكتابة العلمية', 'كتابة الـ Paper', 'PICO', 'بيكو'], section: 'writing-paper' },
+  { id: 'case-reports', title: 'تقارير الحالة', keywords: ['حالة', 'case report', 'case series', 'تقرير', 'clinical case', 'patient', 'الحالات الطبية', 'الحالات السريرية', 'CARE Guidelines'], section: 'case-reports' },
+  { id: 'cross-sectional', title: 'الدراسات المقطعية', keywords: ['دراسات', 'مقطعية', 'cross-sectional', 'استبيان', 'survey', 'questionnaire', 'observational', 'الاستبيانات'], section: 'cross-sectional' },
+  { id: 'systematic-reviews', title: 'المراجعات المنهجية', keywords: ['مراجعة', 'منهجية', 'systematic review', 'meta-analysis', 'PRISMA', 'ميتا اناليسيس', 'سيستماتيك ريفيو', 'التحليل التلوي', 'literature review'], section: 'systematic-reviews' },
+  { id: 'journals-publishing', title: 'المجلات والنشر', keywords: ['مجلة', 'نشر', 'journal', 'publishing', 'pubmed', 'scopus', 'impact factor', 'peer review', 'المجلات الطبية', 'النشر العلمي', 'APC', 'Open Access'], section: 'journals-publishing' },
+  { id: 'research-ethics', title: 'أخلاقيات البحث', keywords: ['أخلاقيات', 'ethics', 'irb', 'consent', 'institutional review board', 'ethical approval', 'الموافقة الأخلاقية', 'Informed Consent'], section: 'research-ethics' },
+  { id: 'reference-management', title: 'إدارة المراجع', keywords: ['مراجع', 'references', 'mendeley', 'zotero', 'citations', 'bibliography', 'الاستشهادات', 'EndNote'], section: 'reference-management' },
+  { id: 'common-mistakes', title: 'الأخطاء الشائعة', keywords: ['أخطاء', 'mistakes', 'common errors', 'bias', 'statistical errors', 'design flaws', 'الأخطاء الإحصائية'], section: 'common-mistakes' },
+  { id: 'practical-tips', title: 'نصائح عملية', keywords: ['نصائح', 'tips', 'practical', 'advice', 'supervisor', 'topic selection', 'rejection', 'المشرف', 'الرفض'], section: 'practical-tips' },
+  { id: 'authorship-ethics', title: 'التأليف والنزاهة', keywords: ['تأليف', 'authorship', 'integrity', 'نزاهة', 'plagiarism', 'conflict of interest', 'الانتحال', 'تضارب المصالح'], section: 'authorship-ethics' },
+  { id: 'authorship-roles', title: 'أدوار التأليف', keywords: ['أدوار', 'roles', 'author', 'contributor', 'first author', 'corresponding author', 'Co-first', 'المؤلف الأول', 'المشرف'], section: 'authorship-roles' },
+  { id: 'journal-classifications', title: 'تصنيفات المجلات', keywords: ['تصنيفات', 'classifications', 'impact factor', 'Q1', 'Q2', 'Q3', 'Q4', 'SJR', 'ranking', 'التصنيف الربعي'], section: 'journal-classifications' },
+  { id: 'predatory-journals', title: 'المجلات المفترسة', keywords: ['مفترسة', 'predatory', 'journals', 'scam', 'Beall\'s list', 'نصابة', 'وهمية', 'نشر علمي'], section: 'predatory-journals' },
+  { id: 'funding-strategies', title: 'استراتيجيات التمويل', keywords: ['تمويل', 'funding', 'grant', 'scholarship', 'Principal Investigator', 'دعم', 'ميزانية', 'عمادة البحث العلمي'], section: 'funding-strategies' },
+  { id: 'accessing-paid-research', title: 'الحصول على الأبحاث', keywords: ['أبحاث', 'accessing', 'paid', 'research', 'Sci-Hub', 'ResearchGate', 'Unpaywall', 'الـ Papers المقفولة', 'فتح الأبحاث'], section: 'accessing-paid-research' },
+  { id: 'portfolio-strategies', title: 'بناء Portfolio البحثي', keywords: ['portfolio', 'بناء', 'research profile', 'هوية بحثية', 'بصمة رقمية'], section: 'portfolio-strategies' },
+  { id: 'research-specialization', title: 'General vs Sub-specialty', keywords: ['تخصص', 'specialization', 'general', 'interest', 'sub-specialty', 'الجراحة', 'الباطني'], section: 'research-specialization' },
+  { id: 'digital-identity', title: 'الهوية البحثية الرقمية', keywords: ['هوية', 'digital', 'orcid', 'google scholar', 'researchgate', 'citations', 'الـ Citations'], section: 'digital-identity' },
+  { id: 'statistical-tools', title: 'برامج التحليل الإحصائي', keywords: ['إحصائي', 'statistical', 'spss', 'r', 'python', 'stata', 'revman', 'تحليل بيانات', 'برامج الإحصاء'], section: 'statistical-tools' },
+  { id: 'writing-strategy', title: 'استراتيجية الكتابة', keywords: ['كتابة', 'strategy', 'writing', 'structure', 'استراتيجية الكتابة الذكية', 'تسلسل الكتابة'], section: 'writing-strategy' },
+  { id: 'sample-size', title: 'حاسبة حجم العينة', keywords: ['حجم العينة', 'حاسبة', 'عينة', 'sample size', 'calculator', 'cochran', 'margin of error', 'FPC', 'معادلة كوشران'], section: 'sample-size-calc' },
+  { id: 'biostatistics-tree', title: 'الخريطة الإحصائية التفاعلية', keywords: ['خريطة', 'إحصائية', 'تفاعلية', 'statistical map', 't-test', 'chi-square', 'anova', 'correlation', 'الاختبار الإحصائي'], section: 'biostatistics-tree' },
 ];
 
 export function SearchBar() {
@@ -46,10 +48,10 @@ export function SearchBar() {
       return;
     }
 
-    const query = searchQuery.toLowerCase();
+    const query = searchQuery.toLowerCase().trim();
     const filtered = searchData.filter(item =>
-      item.title.includes(searchQuery) ||
-      item.keywords.some(keyword => keyword.includes(query))
+      item.title.toLowerCase().includes(query) ||
+      item.keywords.some(keyword => keyword.toLowerCase().includes(query))
     );
     setResults(filtered);
   }, [searchQuery]);
@@ -68,7 +70,7 @@ export function SearchBar() {
       {/* Search Icon/Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 z-[100] flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-full bg-[#0F3A7D] hover:bg-[#0a2a5a] text-white shadow-[0_10px_25px_-5px_rgba(15,58,125,0.4)] transition-all duration-300 dark:bg-blue-600 dark:hover:bg-blue-700 scale-100 sm:scale-110"
+        className="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 z-[100] flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-full bg-[#0F3A7D] hover:bg-[#0a2a5a] text-white shadow-[0_10px_25px_-5px_rgba(15,58,125,0.4)] transition-all duration-300 dark:bg-blue-600 dark:hover:bg-blue-700 scale-100 sm:scale-110 btn-interactive"
         title="البحث عن موضوع"
       >
         {isOpen ? (
@@ -105,7 +107,7 @@ export function SearchBar() {
                   <button
                     key={result.id}
                     onClick={() => handleSearch(result.section)}
-                    className="w-full text-right p-2.5 sm:p-3 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition-colors border-r-4 border-[#0F3A7D] dark:border-blue-400"
+                    className="w-full text-right p-2.5 sm:p-3 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-200 border-r-4 border-[#0F3A7D] dark:border-blue-400 btn-interactive"
                   >
                     <p className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm">
                       {result.title}
@@ -119,7 +121,7 @@ export function SearchBar() {
             ) : searchQuery.trim() !== '' ? (
               <div className="text-center py-4 sm:py-6">
                 <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
-                  لم يتم العثور على نتائج لـ "{searchQuery}"
+                  لم يتم العثور على نتائج لـ {searchQuery}
                 </p>
               </div>
             ) : (
@@ -137,11 +139,11 @@ export function SearchBar() {
                   أقسام شهيرة:
                 </p>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {['Case Report', 'SPSS', 'USMLE', 'PLAB', 'Ethics'].map((tag) => (
+                  {['Systematic Review', 'حاسبة حجم العينة', 'PICO', 'كتابة الـ Paper', 'المجلات المفترسة', 'Case Report'].map((tag) => (
                     <button
                       key={tag}
                       onClick={() => setSearchQuery(tag)}
-                      className="px-2.5 sm:px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-[#0F3A7D] dark:text-blue-300 rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
+                      className="px-2.5 sm:px-3 py-1 text-xs bg-blue-100 dark:bg-blue-900/30 text-[#0F3A7D] dark:text-blue-300 rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-all duration-200 btn-interactive"
                     >
                       {tag}
                     </button>

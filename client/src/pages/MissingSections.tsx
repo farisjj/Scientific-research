@@ -155,6 +155,7 @@ export function AccessingPaidResearchSection() {
         <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <li><KeywordBadge>ResearchGate</KeywordBadge>: أرسل رسالة مباشرة للمؤلف (Request full-text)، غالباً سيرسلها لك وهو سعيد.</li>
           <li><KeywordBadge>Unpaywall</KeywordBadge>: إضافة للمتصفح تبحث لك عن نسخ مجانية وقانونية للبحث.</li>
+          <li><KeywordBadge>Sci-Hub</KeywordBadge>: الأداة الأشهر عالمياً لتخطي الحواجز المدفوعة والوصول إلى ملايين الأوراق العلمية مجاناً. <a href="https://sci-hub.box" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-bold inline-flex items-center gap-1">زيارة الموقع ←</a></li>
           <li>البريد الإلكتروني للجامعة: دائماً جرب الدخول عن طريق مكتبة جامعتك، يكون لديهم اشتراكات في أغلب المجلات.</li>
         </ul>
       </AccordionSection>
@@ -170,7 +171,7 @@ export function PortfolioStrategiesSection() {
         <img src="/portfolio.jpg" alt="بصمة رقمية تتحول إلى حمض نووي" className="section-hero-image" />
         <figcaption className="section-hero-caption">بناء هوية بحثية فريدة ومتميزة</figcaption>
       </figure>
-      <p className="text-sm text-gray-700 dark:text-gray-300">
+      <p className="text-sm text-gray-700 dark:text-gray-300 leading-loose">
         الـ Portfolio ليس فقط عدد أبحاث، هو تنوع. حاول أن يكون عندك <KeywordBadge>Case Report</KeywordBadge> تبين مهارتك السريرية، و <KeywordBadge>Systematic Review</KeywordBadge> تبين قدرتك التحليلية، و <KeywordBadge>Original Article</KeywordBadge> تبين أنك تعرف كيف تعمل ميدانياً.
       </p>
     </section>
@@ -230,16 +231,16 @@ export function StatisticalToolsSection() {
         <img src="/stats_software.jpg" alt="مراقب حاسوب برسومات بيانية متوهجة" className="section-hero-image" />
         <figcaption className="section-hero-caption">برامج التحليل الإحصائي الاحترافية</figcaption>
       </figure>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-        <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+      <div className="flex flex-wrap justify-center gap-4 mt-2">
+        <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] min-w-[280px]">
           <h5 className="font-bold mb-2">SPSS</h5>
           <p className="text-xs">الأكثر شهرة وسهل التعلم (Drag & Drop). ممتاز لأغلب الدراسات الطبية.</p>
         </div>
-        <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+        <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] min-w-[280px]">
           <h5 className="font-bold mb-2">R أو Python</h5>
           <p className="text-xs">للمحترفين. يحتاج برمجة ولكنه يعطيك قوة جبارة في التحليل والرسومات البيانية.</p>
         </div>
-        <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+        <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] min-w-[280px]">
           <h5 className="font-bold mb-2">RevMan</h5>
           <p className="text-xs">البرنامج الرسمي لعمل الـ <KeywordBadge>Meta-analysis</KeywordBadge>.</p>
         </div>

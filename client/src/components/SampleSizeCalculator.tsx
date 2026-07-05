@@ -9,6 +9,15 @@ export function SampleSizeCalculator() {
   const [responseRate, setResponseRate] = useState<number>(80);
   const [finalSampleSize, setFinalSampleSize] = useState<number>(0);
   const [initialSampleSize, setInitialSampleSize] = useState<number>(0);
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+
+  const tooltips: Record<string, string> = {
+    population: "إجمالي عدد الأشخاص في الفئة المستهدفة بدراستك (مثلاً: إجمالي عدد مرضى السكري في مستشفى معين). إذا كان المجتمع كبيراً جداً، اترك الرقم كما هو 20000.",
+    prevalence: "نسبة وجود المرض أو الظاهرة في المجتمع بناءً على دراسات سابقة. إذا لم تكن تعرفها، اتركها 50% لأنها تضمن لك أكبر وأأمن حجم للعينة.",
+    margin: "مقدار التفاوت المقبول بين نتائج عينتك والواقع. 5% هو المعيار المعتمد في الأبحاث الطبية السريرية.",
+    confidence: "مدى يقينك بأن النتائج تمثل المجتمع الحقيقي. 95% هو الخيار القياسي والأكثر استخداماً في الأوراق العلمية.",
+    response: "نسبة الأشخاص الذين تتوقع أن يكملوا الاستبيان. في الأبحاث الطبية (خاصة الاستبيانات الإلكترونية)، غالباً ما يكون بين 60-80%."
+  };
 
   const calculate = () => {
     const N = parseInt(population) || 0;
@@ -68,6 +77,27 @@ export function SampleSizeCalculator() {
     calculate();
   }, [population, confidence, margin, prevalence, responseRate]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.tooltip-trigger')) {
+        setActiveTooltip(null);
+      }
+    };
+
+    if (activeTooltip) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeTooltip]);
+
+  const toggleTooltip = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setActiveTooltip(activeTooltip === id ? null : id);
+  };
+
   return (
     <div className="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-slate-800 p-6 md:p-8 my-10 shadow-2xl relative overflow-hidden">
       {/* Decorative background element */}
@@ -87,10 +117,21 @@ export function SampleSizeCalculator() {
         <div className="lg:col-span-2 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Population Size */}
-            <div className="space-y-2">
+            <div className="space-y-2 relative">
               <label className="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                 حجم المجتمع (N)
-                <Info className="w-3.5 h-3.5 text-blue-500 cursor-help" />
+                <div className="relative inline-block tooltip-trigger">
+                  <Info 
+                    className="w-4 h-4 text-blue-500 cursor-pointer p-0.5 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-colors" 
+                    onClick={(e) => toggleTooltip('population', e)}
+                  />
+                  {activeTooltip === 'population' && (
+                    <div className="absolute bottom-full right-0 mb-2 w-64 p-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] leading-relaxed rounded-lg shadow-xl z-[100] border border-white/10 dark:border-slate-200 animate-in fade-in slide-in-from-bottom-1">
+                      {tooltips.population}
+                      <div className="absolute top-full right-4 border-8 border-transparent border-t-slate-900 dark:border-t-white"></div>
+                    </div>
+                  )}
+                </div>
               </label>
               <input
                 type="number"
@@ -102,10 +143,21 @@ export function SampleSizeCalculator() {
             </div>
 
             {/* Expected Prevalence */}
-            <div className="space-y-2">
+            <div className="space-y-2 relative">
               <label className="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center gap-2">
                 الانتشار المتوقع (p)
-                <Info className="w-3.5 h-3.5 text-blue-500 cursor-help" />
+                <div className="relative inline-block tooltip-trigger">
+                  <Info 
+                    className="w-4 h-4 text-blue-500 cursor-pointer p-0.5 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-colors" 
+                    onClick={(e) => toggleTooltip('prevalence', e)}
+                  />
+                  {activeTooltip === 'prevalence' && (
+                    <div className="absolute bottom-full right-0 mb-2 w-64 p-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] leading-relaxed rounded-lg shadow-xl z-[100] border border-white/10 dark:border-slate-200 animate-in fade-in slide-in-from-bottom-1">
+                      {tooltips.prevalence}
+                      <div className="absolute top-full right-4 border-8 border-transparent border-t-slate-900 dark:border-t-white"></div>
+                    </div>
+                  )}
+                </div>
               </label>
               <div className="relative">
                 <input
@@ -122,8 +174,22 @@ export function SampleSizeCalculator() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Confidence Level */}
-            <div className="space-y-3">
-              <label className="text-sm font-bold text-gray-700 dark:text-gray-300">مستوى الثقة (Confidence)</label>
+            <div className="space-y-3 relative">
+              <label className="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center gap-2">
+                مستوى الثقة (Confidence)
+                  <div className="relative inline-block tooltip-trigger">
+                    <Info 
+                      className="w-4 h-4 text-blue-500 cursor-pointer p-0.5 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-colors" 
+                      onClick={(e) => toggleTooltip('confidence', e)}
+                    />
+                    {activeTooltip === 'confidence' && (
+                      <div className="absolute bottom-full right-0 mb-2 w-64 p-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] leading-relaxed rounded-lg shadow-xl z-[100] border border-white/10 dark:border-slate-200 animate-in fade-in slide-in-from-bottom-1">
+                        {tooltips.confidence}
+                        <div className="absolute top-full right-4 border-8 border-transparent border-t-slate-900 dark:border-t-white"></div>
+                      </div>
+                    )}
+                  </div>
+              </label>
               <div className="flex p-1 bg-gray-100 dark:bg-slate-800 rounded-xl">
                 {[90, 95, 99].map((val) => (
                   <button
@@ -142,9 +208,23 @@ export function SampleSizeCalculator() {
             </div>
 
             {/* Margin of Error */}
-            <div className="space-y-3">
-              <label className="text-sm font-bold text-gray-700 dark:text-gray-300 flex justify-between">
-                <span>هامش الخطأ (e)</span>
+            <div className="space-y-3 relative">
+              <label className="text-sm font-bold text-gray-700 dark:text-gray-300 flex justify-between items-center">
+                <span className="flex items-center gap-2">
+                  هامش الخطأ (e)
+                  <div className="relative inline-block tooltip-trigger">
+                    <Info 
+                      className="w-4 h-4 text-blue-500 cursor-pointer p-0.5 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-colors" 
+                      onClick={(e) => toggleTooltip('margin', e)}
+                    />
+                    {activeTooltip === 'margin' && (
+                      <div className="absolute bottom-full right-0 mb-2 w-64 p-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] leading-relaxed rounded-lg shadow-xl z-[100] border border-white/10 dark:border-slate-200 animate-in fade-in slide-in-from-bottom-1">
+                        {tooltips.margin}
+                        <div className="absolute top-full right-4 border-8 border-transparent border-t-slate-900 dark:border-t-white"></div>
+                      </div>
+                    )}
+                  </div>
+                </span>
                 <span className="text-blue-600 font-mono">{margin}%</span>
               </label>
               <input
@@ -160,9 +240,23 @@ export function SampleSizeCalculator() {
           </div>
 
           {/* Expected Response Rate */}
-          <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-900/20">
+          <div className="p-4 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-900/20 relative">
             <div className="flex items-center justify-between mb-3">
-              <label className="text-sm font-bold text-blue-900 dark:text-blue-300">معدل الاستجابة المتوقع (Response Rate)</label>
+              <label className="text-sm font-bold text-blue-900 dark:text-blue-300 flex items-center gap-2">
+                معدل الاستجابة المتوقع (Response Rate)
+                <div className="relative inline-block tooltip-trigger">
+                  <Info 
+                    className="w-4 h-4 text-blue-500 cursor-pointer p-0.5 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-full transition-colors" 
+                    onClick={(e) => toggleTooltip('response', e)}
+                  />
+                  {activeTooltip === 'response' && (
+                    <div className="absolute bottom-full right-0 mb-2 w-64 p-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-[10px] leading-relaxed rounded-lg shadow-xl z-[100] border border-white/10 dark:border-slate-200 animate-in fade-in slide-in-from-bottom-1">
+                      {tooltips.response}
+                      <div className="absolute top-full right-4 border-8 border-transparent border-t-slate-900 dark:border-t-white"></div>
+                    </div>
+                  )}
+                </div>
+              </label>
               <span className="text-blue-600 font-mono font-bold">{responseRate}%</span>
             </div>
             <input

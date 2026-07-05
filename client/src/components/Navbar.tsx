@@ -132,24 +132,26 @@ export function Navbar() {
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <button
               onClick={() => setBookmarksOpen(true)}
-              className="p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex-shrink-0"
+              className="p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 btn-interactive flex-shrink-0"
               title="المفضلة"
             >
-              <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300" />
+              <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 icon-interactive" />
             </button>
-            <ThemeToggle />
+            <div className="icon-interactive">
+              <ThemeToggle />
+            </div>
 
             {/* Hamburger Menu على الموبايل */}
             {isMobile && (
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex-shrink-0"
+                className="p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 btn-interactive flex-shrink-0"
                 aria-label="فتح القائمة"
               >
                 {isOpen ? (
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 icon-interactive" />
                 ) : (
-                  <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300" />
+                  <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 dark:text-gray-300 icon-interactive" />
                 )}
               </button>
             )}

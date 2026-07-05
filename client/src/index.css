@@ -142,6 +142,37 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+    line-height: 1.6;
+    text-align: right;
+  }
+  
+  /* Fix for Arabic/English mixed baseline */
+  h1, h2, h3, h4, h5, h6 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    line-height: 1.4;
+  }
+  
+  /* Target English text and badges within Arabic lines */
+  .font-poppins, 
+  span:not([dir="rtl"]),
+  strong:not([dir="rtl"]) {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  
+  /* Container for mixed content */
+  .flex.items-center, .flex.items-baseline {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Ensure badges and English terms don't break baseline in paragraphs */
+  p .KeywordBadge, p span:not([dir="rtl"]) {
+    margin-top: 0;
   }
   h1 {
     @apply text-4xl font-bold;
@@ -279,38 +310,60 @@ body {
 button, 
 a[href], 
 [role="button"],
-input[type="checkbox"],
-input[type="radio"],
-select {
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+.btn-interactive {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              background-color 0.3s ease, 
+              box-shadow 0.3s ease,
+              filter 0.3s ease;
 }
 
 button:hover:not(:disabled),
 a[href]:hover,
-[role="button"]:hover:not([aria-disabled="true"]) {
-  transform: translateY(-3px) scale(1.02);
+[role="button"]:hover:not([aria-disabled="true"]),
+.btn-interactive:hover {
+  transform: translateY(-2px);
   filter: brightness(1.05);
 }
 
 button:active:not(:disabled),
-a[href]:active,
-[role="button"]:active:not([aria-disabled="true"]) {
-  transform: translateY(-1px) scale(0.98);
+.btn-interactive:active {
+  transform: translateY(0);
   filter: brightness(0.95);
 }
 
-/* تأثير خاص للبطاقات عند التمرير */
-.accordion-item,
+/* تأثير خاص للبطاقات (Category Cards) */
+.category-card,
 .card-hover,
 .bg-white.dark\:bg-slate-800.rounded-xl {
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.4s ease,
+              background-color 0.3s ease;
+  will-change: transform, box-shadow;
 }
 
-.accordion-item:hover,
+.category-card:hover,
 .card-hover:hover,
 .bg-white.dark\:bg-slate-800.rounded-xl:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 12px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* حركات الأيقونات (Micro-animations) */
+.icon-interactive {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-interactive:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* تأثيرات الأكورديون (Accordion Hover) */
+.accordion-trigger-hover:hover {
+  background-color: var(--secondary);
+  transition: background-color 0.2s ease;
+}
+.dark .accordion-trigger-hover:hover {
+  background-color: rgba(51, 65, 85, 0.5);
 }
 
 /* حركة نبض بسيطة للأيقونات الهامة */

@@ -34,7 +34,7 @@ export default function Footer() {
                   href="https://wa.me/962782498874" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 btn-interactive inline-block"
                 >
                   +962782498874
                 </a>
@@ -75,32 +75,32 @@ export default function Footer() {
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">روابط وموارد خارجية مفيدة</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <a 
-                  href="https://t.me/+c0ktB8YcO0MwMGVk" 
+                  href="https://t.me/+tojvW3IEzcQ2OTM8" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group"
+                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group category-card"
                 >
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors icon-interactive">
                     <MessageCircle className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">قناة تيليجرام (1)</p>
-                    <p className="text-xs text-slate-500 dark:text-gray-400">موارد بحثية متميزة</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white">RAOH Researchers</p>
+                    <p className="text-xs text-slate-500 dark:text-gray-400">قناة تهدف إلى تسهيل الوصول للمحتوى والدورات المجانية في مجال البحث العلمي الطبي وتلخيصها وجمعها في مكان واحد.</p>
                   </div>
                 </a>
 
                 <a 
-                  href="https://t.me/+tojvW3IEzcQ2OTM8" 
+                  href="https://t.me/+c0ktB8YcO0MwMGVk" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group"
+                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group category-card"
                 >
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors icon-interactive">
                     <MessageCircle className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">قناة تيليجرام (2)</p>
-                    <p className="text-xs text-slate-500 dark:text-gray-400">تحديثات ونقاشات علمية</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white">Research Made Easy</p>
+                    <p className="text-xs text-slate-500 dark:text-gray-400">مبادرة لطلبة الطب في جامعة اليرموك تقدم تدريباً عملياً متسلسلاً عبر مهام (Tasks) لتطبيق خطوات البحث العلمي خطوة بخطوة.</p>
                   </div>
                 </a>
 
@@ -108,9 +108,9 @@ export default function Footer() {
                   href="https://sebawe.com/2024/12/31/10-steps-to-get-started-in-research-as-a-medical-student/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group"
+                  className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all group category-card"
                 >
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors icon-interactive">
                     <Microscope className="w-5 h-5" />
                   </div>
                   <div>

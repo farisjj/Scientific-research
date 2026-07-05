@@ -38,14 +38,14 @@ export function ScrollReveal({
   const getInitialTransform = () => {
     switch (direction) {
       case 'down':
-        return 'translateY(-30px)';
+        return 'translateY(-20px)';
       case 'left':
-        return 'translateX(30px)';
+        return 'translateY(20px)'; // استبدال الأفقي بالرأسي لـ RTL
       case 'right':
-        return 'translateX(-30px)';
+        return 'translateY(20px)'; // استبدال الأفقي بالرأسي لـ RTL
       case 'up':
       default:
-        return 'translateY(30px)';
+        return 'translateY(20px)';
     }
   };
 
@@ -56,7 +56,8 @@ export function ScrollReveal({
       style={{
         opacity: 0,
         transform: getInitialTransform(),
-        transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+        transition: 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
+        willChange: 'opacity, transform'
       }}
     >
       {children}
@@ -68,13 +69,13 @@ export function ScrollReveal({
 export const revealStyles = `
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .reveal-visible {
     opacity: 1 !important;
-    transform: translateY(0) translateX(0) !important;
+    transform: translateY(0) !important;
   }
 
   /* تحسين سلاسة التمرير */

@@ -24,20 +24,22 @@ export function SearchBox({ sections, onSectionSelect }: SearchBoxProps) {
 
   // Content mapping for search - Arabic and English keywords
   const contentMap: Record<string, string[]> = {
-    'intro': ['البحث العلمي', 'طرح سؤال', 'منهجية', 'طب', 'اكتشاف', 'medical research', 'research', 'question', 'methodology', 'scientific'],
-    'cv-impact': ['السيرة الذاتية', 'CV', 'التميز', 'الأكاديمي', 'المهني', 'النقاط', 'curriculum vitae', 'cv', 'academic', 'professional', 'impact'],
-    'hierarchy': ['هرم الأدلة', 'الدراسات', 'الأبحاث', 'الأدلة الطبية', 'الأدلة العلمية', 'evidence hierarchy', 'evidence', 'levels of evidence', 'study design'],
+    'intro': ['البحث العلمي', 'طرح سؤال', 'منهجية', 'طب', 'اكتشاف', 'medical research', 'research', 'question', 'methodology', 'scientific', 'طرح سؤال', 'منهجية', 'PICO', 'بيكو'],
+    'cv-impact': ['السيرة الذاتية', 'CV', 'التميز', 'الأكاديمي', 'المهني', 'النقاط', 'curriculum vitae', 'cv', 'academic', 'professional', 'impact', 'usmle', 'plab', 'eras', 'match', 'residency'],
+    'hierarchy': ['هرم الأدلة', 'الدراسات', 'الأبحاث', 'الأدلة الطبية', 'الأدلة العلمية', 'evidence hierarchy', 'evidence', 'levels of evidence', 'study design', 'أقوى دليل', 'pyramid', 'ebm'],
     'time-management': ['التوفيق', 'الدراسة', 'البحث', 'إدارة الوقت', 'الجدول الزمني', 'time management', 'study', 'balance', 'schedule', 'planning'],
-    'writing-paper': ['كتابة', 'الورقة العلمية', 'البحث', 'المقالة', 'الكتابة العلمية', 'writing', 'paper', 'manuscript', 'abstract', 'introduction'],
-    'case-reports': ['تقارير الحالة', 'الحالات الطبية', 'الحالات السريرية', 'التقارير', 'case reports', 'case report', 'clinical case', 'patient'],
+    'writing-paper': ['كتابة', 'الورقة العلمية', 'البحث', 'المقالة', 'الكتابة العلمية', 'writing', 'paper', 'manuscript', 'abstract', 'introduction', 'methods', 'كتابة الـ Paper', 'PICO', 'بيكو'],
+    'case-reports': ['تقارير الحالة', 'الحالات الطبية', 'الحالات السريرية', 'التقارير', 'case reports', 'case report', 'clinical case', 'patient', 'case series', 'CARE Guidelines'],
     'cross-sectional': ['الدراسات المقطعية', 'المقطعية', 'الاستبيانات', 'الدراسات', 'cross-sectional', 'survey', 'questionnaire', 'observational'],
-    'systematic-reviews': ['المراجعات المنهجية', 'المراجعة', 'التحليل التلوي', 'Meta-analysis', 'systematic review', 'meta-analysis', 'literature review', 'review'],
-    'journals-publishing': ['المجلات', 'النشر', 'المجلات الطبية', 'النشر العلمي', 'المجلات العلمية', 'journal', 'publishing', 'publication', 'impact factor', 'peer review'],
-    'research-ethics': ['أخلاقيات البحث', 'IRB', 'الموافقة الأخلاقية', 'الأخلاقيات', 'البحث الأخلاقي', 'research ethics', 'irb', 'institutional review board', 'ethical approval', 'consent'],
-    'reference-management': ['إدارة المراجع', 'Mendeley', 'Zotero', 'المراجع', 'الاستشهادات', 'reference management', 'mendeley', 'zotero', 'citations', 'bibliography'],
+    'systematic-reviews': ['المراجعات المنهجية', 'المراجعة', 'التحليل التلوي', 'Meta-analysis', 'systematic review', 'meta-analysis', 'literature review', 'review', 'PRISMA', 'ميتا اناليسيس', 'سيستماتيك ريفيو'],
+    'journals-publishing': ['المجلات', 'النشر', 'المجلات الطبية', 'النشر العلمي', 'المجلات العلمية', 'journal', 'publishing', 'publication', 'impact factor', 'peer review', 'pubmed', 'scopus', 'APC', 'Open Access'],
+    'research-ethics': ['أخلاقيات البحث', 'IRB', 'الموافقة الأخلاقية', 'الأخلاقيات', 'البحث الأخلاقي', 'research ethics', 'irb', 'institutional review board', 'ethical approval', 'consent', 'Informed Consent'],
+    'reference-management': ['إدارة المراجع', 'Mendeley', 'Zotero', 'المراجع', 'الاستشهادات', 'reference management', 'mendeley', 'zotero', 'citations', 'bibliography', 'EndNote'],
     'common-mistakes': ['الأخطاء الشائعة', 'الأخطاء', 'الأخطاء الإحصائية', 'الأخطاء التصميمية', 'common mistakes', 'errors', 'statistical errors', 'design flaws', 'bias'],
     'practical-tips': ['نصائح عملية', 'نصائح', 'المشرف', 'الموضوع', 'الرفض', 'practical tips', 'tips', 'supervisor', 'topic selection', 'rejection'],
     'authorship-ethics': ['التأليف والنزاهة', 'التأليف', 'الانتحال', 'تضارب المصالح', 'النزاهة', 'authorship', 'plagiarism', 'conflict of interest', 'integrity', 'author'],
+    'sample-size': ['حجم العينة', 'حاسبة', 'عينة', 'sample size', 'calculator', 'cochran', 'margin of error', 'FPC', 'معادلة كوشران'],
+    'biostatistics-tree': ['خريطة', 'إحصائية', 'تفاعلية', 'statistical map', 't-test', 'chi-square', 'anova', 'correlation', 'الاختبار الإحصائي'],
   };
 
   // Handle search - supports both Arabic and English
@@ -155,7 +157,7 @@ export function SearchBox({ sections, onSectionSelect }: SearchBoxProps) {
             </div>
           ) : searchQuery.trim().length > 0 ? (
             <div className="px-4 py-6 text-center text-gray-500 dark:text-gray-400 text-sm">
-              لم يتم العثور على نتائج لـ "{searchQuery}"
+              لم يتم العثور على نتائج لـ {searchQuery}
             </div>
           ) : null}
         </div>

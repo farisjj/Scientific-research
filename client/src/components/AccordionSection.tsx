@@ -14,13 +14,13 @@ export function AccordionSection({ title, children, defaultOpen = false }: Accor
     <div className="mb-4 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:border-[#0F3A7D]/30 dark:hover:border-blue-500/50 shadow-sm dark:shadow-blue-900/10 transition-colors duration-200 accordion-item">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800/80 hover:bg-blue-50/50 dark:hover:bg-slate-700/80 transition-colors duration-200 group"
+        className="w-full px-6 py-4 flex items-center justify-between bg-white dark:bg-slate-800/80 hover:bg-blue-50/50 dark:hover:bg-slate-700/80 transition-colors duration-200 group accordion-trigger-hover"
       >
-        <h3 className="text-lg font-semibold text-[#0F3A7D] dark:text-blue-400 text-right flex-1 group-hover:text-[#0F3A7D]/80 dark:group-hover:text-blue-300 transition-colors">
+        <h3 className="text-lg font-semibold text-[#0F3A7D] dark:text-blue-400 text-right flex-1 group-hover:text-[#0F3A7D]/80 dark:group-hover:text-blue-300 transition-colors flex items-center flex-wrap gap-2 justify-start">
           {title}
         </h3>
         <ChevronDown
-          className={`w-5 h-5 text-[#0F3A7D] dark:text-blue-400 ml-4 transition-transform duration-300 flex-shrink-0 ${
+          className={`w-5 h-5 text-[#0F3A7D] dark:text-blue-400 ml-4 transition-transform duration-300 flex-shrink-0 icon-interactive ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
