@@ -129,7 +129,7 @@ export default function Home() {
 
             <ScrollReveal direction="up" delay={200}>
               <AccordionSection
-                title="ماذا يعني Medical Research أصلاً؟"
+                title="ماذا يعني ال MedicalResearch أصلاً؟"
                 defaultOpen={true}
               >
                 <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -152,7 +152,7 @@ export default function Home() {
                   في عالم الطب حالياً، شطارتك كطبيب لا تكفي وحدها، يجب أن تكون باحثاً أيضاً. الـ Research هو الورقة الرابحة في يدك لهذه الأسباب:
                 </p>
                 <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">الـ CV وعنق الزجاجة:</span> هو الذي يميزك عن آلاف المتقدمين لبرامج الإقامة (Residency Programs) التنافسية محلياً ودولياً مثل الـ USMLE والـ PLAB.</li>
+                  <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">الـ CV والتنافسية العالية:</span> هو الذي يميزك عن آلاف المتقدمين لبرامج الإقامة (Residency Programs) التنافسية محلياً ودولياً مثل الـ USMLE والـ PLAB.</li>
                   <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">إتقان الـ Evidence-Based Medicine (EBM):</span> تتعلم كيف تقرأ الـ Papers بنظرة ناقدة وتعرف كيف تستخرج المعلومة الصحيحة والدقيقة لتطبقها على مرضاك.</li>
                   <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">بناء شبكة علاقات (Networking):</span> يفتح لك أبواب العمل المباشر مع Consultants واستشاريين كبار، وهذا يسهل عليك الحصول على رسائل توصية (LoRs) قوية.</li>
                   <li><span className="text-[#0F3A7D] dark:text-blue-400 font-bold">مهارات العمل الجماعي (Teamwork):</span> تتعلم كيف تعمل ضمن فريق، وتوزع المهام، وتتواصل بفعالية؛ وهي أهم مهارات الطبيب الناجح.</li>
@@ -162,7 +162,7 @@ export default function Home() {
 
             <AccordionSection title="مثال من الواقع">
               <p className="text-sm text-gray-700 dark:text-gray-300">
-                تخيل طبيباً لاحظ في العيادة أن مرضى السكري الذين يمارسون رياضة معينة كانت استجابتهم للأدوية أفضل بكثير من غيرهم. بدل أن تظل مجرد ملاحظة عابرة، جمع بيانات هؤلاء المرضى وحللها (Data Analysis) وقارنها علمياً وأثبت للعالم أن هذه الرياضة فعلاً تساعد في العلاج. هذا هو الـ Research ببساطة!
+                تخيل طبيباً لاحظ في العيادة أن مرضى السكري الذين يمارسون رياضة معينة كانت استجابتهم للأدوية أفضل بكثير من غيرهم. بدل أن تظل مجرد ملاحظة عابرة، جمع بيانات هؤلاء المرضى وحللها (Data Analysis) وقارنها علمياً وأثبت للعالم أن هذه الرياضة فعلاً تساعد في العلاج. هذا هو الـ Research ببساطة.
               </p>
             </AccordionSection>
           </section>
@@ -184,7 +184,7 @@ export default function Home() {
                   الـ CV الطبي ليس مجرد قائمة بالأشياء التي فعلتها، هو القصة التي تحكي من أنت كطالب طب طموح.
                 </p>
                 <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
-                  لما تضيف Paper منشورة لـ CV الخاص بك، أنت لا تقول فقط عندي خبرة، أنت تثبت أنك قادر على التفكير في مشكلة، وتصميم حل، وتنفيذه والوصول لنتائج بنجاح.
+                  لما تضيف Paper منشورة للـ CV الخاص بك، أنت لا تقول فقط إنه عندي خبرة، أنت تثبت أنك قادر على التفكير في مشكلة، وتصميم حل، وتنفيذه والوصول لنتائج بنجاح.
                 </p>
               </AccordionSection>
             </ScrollReveal>
@@ -192,7 +192,7 @@ export default function Home() {
             <ScrollReveal direction="up" delay={300}>
               <AccordionSection title="الوضع في الأردن">
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  في المستشفيات الكبيرة والتنافسية في الأردن، ستجد عشرات الطلاب معدلاتهم قريبة من بعضها. عندما يرى الـ Interviewer أن لديك أبحاثاً منشورة، تتحول المقابلة من مجرد تسميع معلومات إلى دردشة علمية ممتعة عن شغلك، وهذا يعطيك أولوية كبيرة.
+                  في المستشفيات الكبيرة والتنافسية في الأردن، ستجد عشرات الطلاب معدلاتهم قريبة من بعضها. عندما يرى الـ Interviewer أن لديك أبحاثاً منشورة، تتحول المقابلة من مجرد تسميع معلومات إلى دردشة علمية ممتعة عن شغلك و إنجازاتك، وهذا يعطيك أولوية كبيرة.
                 </p>
                 <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
                   أغلب المراكز والمستشفيات حالياً صارت تعتمد نظام نقاط (Points System) لتقييم المتقدمين، ووجود ورقة علمية باسمك يعطيك نقاطاً إضافية ترفع ترتيبك فوراً فوق منافسيك.
@@ -205,7 +205,7 @@ export default function Home() {
                 بعدما صار الـ <KeywordBadge>USMLE Step 1</KeywordBadge> بنظام النجاح والرسوب (Pass/Fail)، لم يعد هناك طريقة للتميز غير علامة Step 2 CK والـ CV القوي والـ Research.
               </p>
               <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
-                في التخصصات التنافسية مثل الـ Surgery أو الـ Oncology أو الـ Cardiology، الـ Research صار شرطاً أساسياً وليس مجرد إضافة لطيفة. إحصائيات الـ <KeywordBadge>The Match</KeywordBadge> تؤكد أن المقبولين لديهم قائمة من الـ Research والـ Posters تفوق غيرهم بكثير.
+                في التخصصات التنافسية مثل الـ Surgery أو الـ Oncology أو الـ Cardiology، الـ Research صار شرطاً أساسياً وليس مجرد إضافة لطيفة. إحصائياتـ <KeywordBadge>The Match</KeywordBadge> تؤكد أن المقبولين لديهم قائمة من الـ Research والـ Posters تفوق غيرهم بكثير.
               </p>
             </AccordionSection>
 
@@ -220,10 +220,10 @@ export default function Home() {
 
             <AccordionSection title="أي أبحاث ترفع الـ CV أكثر؟">
               <p className="text-sm text-gray-700 dark:text-gray-300">
-                ليس من الضروري أن تكتشف علاجاً للسرطان لكي يكون الـ CV الخاص بك قوياً! هناك أنواع أبحاث يمكن للطلاب القيام بها وتعتبر ممتازة:
+                ليس من الضروري أن تكتشف علاجاً للسرطان لكي يكون الـ CV الخاص بك قويا. هناك أنواع أبحاث يمكن للطلاب القيام بها وتعتبر ممتازة:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li><KeywordBadge>Systematic Reviews</KeywordBadge> و <KeywordBadge>Meta-analysis</KeywordBadge>: هذه قمة الهرم وتثبت قدرتك العالية على التحليل والنقد.</li>
+                <li><KeywordBadge>Systematic Reviews</KeywordBadge> و <KeywordBadge>Meta-analysis</KeywordBadge>: هذه قمة الهرم العلمي وتثبت قدرتك العالية على التحليل والنقد.</li>
                 <li><KeywordBadge>Case Reports</KeywordBadge>: ممتازة جداً وتبين أنك طالب تملك <KeywordBadge>Clinical Sense</KeywordBadge> وتستطيع التقاط الحالات النادرة.</li>
               </ul>
               <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border-r-4 border-yellow-600 dark:border-yellow-400 rounded">
@@ -252,7 +252,7 @@ export default function Home() {
                 "استغل عطلة نهاية الأسبوع للمهام التي تحتاج تركيزاً عالياً.",
                 "لا تبدأ بحثاً جديداً قبل الامتحانات الكبيرة بشهر.",
                 "وزع المهام على فريقك؛ لا تعمل كل شيء وحدك.",
-                "استخدم تطبيقات تنظيم الوقت مثل Notion أو Trello."
+                "استخدم تطبيقات تنظيم الوقت مثل Notion."
               ]}
             />
           </section>

@@ -71,7 +71,8 @@ export function JournalClassificationsSection() {
         <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <li><KeywordBadge>Q1</KeywordBadge>: الفئة الأولى (أقوى شيء).</li>
           <li><KeywordBadge>Q2</KeywordBadge>: الفئة الثانية.</li>
-          <li><KeywordBadge>Q3</KeywordBadge> و <KeywordBadge>Q4</KeywordBadge>: المجلات الأقل تأثيراً.</li>
+          <li><KeywordBadge>Q3</KeywordBadge>: الفئة الثالثة (تأثير متوسط، Impact Factor تقريباً 1.3 - 1.7).</li>
+          <li><KeywordBadge>Q4</KeywordBadge>: المجلات الأقل تأثيراً (Impact Factor تقريباً 0.2 - 0.8).</li>
         </ul>
         <ProTipBox>
           طموحك دائماً أن يكون النشر في مجلات Q1 أو Q2. هذه التي فعلاً تصنع فرقاً في الـ CV الخاص بك عندما تقدم على برامج عالمية.
@@ -154,9 +155,10 @@ export function AccessingPaidResearchSection() {
       >
         <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <li><KeywordBadge>ResearchGate</KeywordBadge>: أرسل رسالة مباشرة للمؤلف (Request full-text)، غالباً سيرسلها لك وهو سعيد.</li>
+          <li><KeywordBadge>Google Scholar</KeywordBadge>: يوفر العديد من الأبحاث المغلقة (Closed Access) مجاناً عبر روابط نسخ بديلة، والتي قد لا تجدها في مكان آخر.</li>
           <li><KeywordBadge>Unpaywall</KeywordBadge>: إضافة للمتصفح تبحث لك عن نسخ مجانية وقانونية للبحث.</li>
-          <li><KeywordBadge>Sci-Hub</KeywordBadge>: الأداة الأشهر عالمياً لتخطي الحواجز المدفوعة والوصول إلى ملايين الأوراق العلمية مجاناً. <a href="https://sci-hub.box" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-bold inline-flex items-center gap-1">زيارة الموقع ←</a></li>
-          <li>البريد الإلكتروني للجامعة: دائماً جرب الدخول عن طريق مكتبة جامعتك، يكون لديهم اشتراكات في أغلب المجلات.</li>
+          <li><KeywordBadge>Sci-Hub</KeywordBadge>: الأداة الأشهر عالمياً لتخطي الحواجز المدفوعة. (ملاحظة هامة: الأداة لا تعمل غالباً على الأبحاث المنشورة من عام 2022 وما بعده). <a href="https://sci-hub.box" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-bold inline-flex items-center gap-1">زيارة الموقع ←</a></li>
+          <li>البريد الإلكتروني للجامعة: دائماً جرب الدخول عن طريق مكتبة جامعتك، حيث توفر اشتراكات في أغلب المجلات ودور النشر (مثل Springer Nature و Wiley) وقواعد البيانات (مثل Scopus و Web of Science).</li>
         </ul>
       </AccordionSection>
     </section>

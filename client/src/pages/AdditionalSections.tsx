@@ -55,7 +55,7 @@ export function WritingPaperSection() {
         <div className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
           <div className="border-r-4 border-red-400 pr-4">
             <strong className="text-red-600 dark:text-red-400">الـ Introduction الطويلة زيادة:</strong>
-            <p>لا تكتب تاريخ المرض من أيام الفراعنة! ركز على آخر التطورات والأدبيات التي تخص سؤالك بشكل مباشر.</p>
+            <p>لا تكتب تاريخ المرض من أيام الفراعنة. ركز على آخر و أحدث التطورات والأدبيات التي تخص سؤالك بشكل مباشر.</p>
           </div>
 
           <div className="border-r-4 border-red-400 pr-4">
@@ -65,7 +65,7 @@ export function WritingPaperSection() {
 
           <div className="border-r-4 border-red-400 pr-4">
             <strong className="text-red-600 dark:text-red-400">المبالغة في النتائج (Overinterpretation):</strong>
-            <p>لو كانت دراستك على 50 مريضاً فقط، لا تقل وجدنا العلاج النهائي للمرض! كن واقعياً ومهنياً.</p>
+            <p>لو كانت دراستك على 50 مريضاً فقط، لا تقل وجدنا العلاج النهائي للمرض، كن واقعياً ومهنياً.</p>
           </div>
         </div>
 

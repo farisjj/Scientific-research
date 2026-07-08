@@ -315,8 +315,8 @@ export function JournalsPublishingSection() {
         <ul className="list-disc list-inside mt-3 space-y-2">
           <li>Q1: الأقوى والأكثر تنافسية</li>
           <li>Q2: قوية وجيدة</li>
-          <li>Q3: متوسطة</li>
-          <li>Q4: ضعيفة نسبياً</li>
+          <li>Q3: الفئة الثالثة (تأثير متوسط، Impact Factor تقريباً 1.3 - 1.7)</li>
+          <li>Q4: المجلات الأقل تأثيراً (Impact Factor تقريباً 0.2 - 0.8)</li>
         </ul>
       </AccordionSection>
 
