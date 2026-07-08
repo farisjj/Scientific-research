@@ -312,7 +312,7 @@ export function RCTSection() {
         </p>
       </AccordionSection>
 
-      <AccordionSection title="لماذا تعتبر الـ RCT المعيار الذهبي (Gold Standard) للأبحاث السريرية الأولية؟">
+      <AccordionSection title="لماذا تعتبر الـ RCT المعيار الذهبي (Gold Standard) للأبحاث السريرية الأولية (Original Articles)؟">
         <p className="text-sm text-gray-700 dark:text-gray-300">
           لأن التوزيع العشوائي يقضي على تحيز الاختيار (Selection Bias). هي النوع الوحيد من الدراسات الأولية الذي يثبت السبب والنتيجة (Cause and Effect) بشكل قاطع، بدلاً من مجرد إثبات وجود ارتباط (Association) بين المتغيرات.
         </p>
