@@ -120,12 +120,12 @@ export function CaseReportsSection() {
 
           <div className="bg-green-50 dark:bg-emerald-900/20 p-4 rounded-lg">
             <strong className="text-[#10B981] dark:text-green-400">عرض جانبي غير متوقع (Unexpected Side Effect):</strong>
-            <p className="dark:text-gray-300">مثلاً: مريض يأخذ علاجاً كيميائياً جديداً، وفجأة حدث لديه تراجع سريع في كفاءة القلب. توثيقك لهذه الحالة قد ينبه أطباء في كل العالم!</p>
+            <p className="dark:text-gray-300">مثلاً: مريض يأخذ علاجاً كيميائياً جديداً، وفجأة حدث لديه تراجع سريع في كفاءة القلب. توثيقك لهذه الحالة قد ينبه الأطباء فيكل العالم!</p>
           </div>
 
           <div className="bg-green-50 dark:bg-emerald-900/20 p-4 rounded-lg">
             <strong className="text-[#10B981] dark:text-green-400">استخدام مبتكر لعلاج (Novel Treatment):</strong>
-            <p className="dark:text-gray-300">استخدام دواء مخصص لمرض معين في علاج مرض ثانٍ ونجاحه بشكل مبهر.</p>
+            <p className="dark:text-gray-300">استخدام دواء مخصص لمرض معين في علاج مرض ثاني ونجاحه بشكل مبهر.</p>
           </div>
         </div>
       </AccordionSection>
@@ -139,25 +139,25 @@ export function CaseReportsSection() {
             </p>
             <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border-r-4 border-blue-500 mb-3">
               <p className="text-sm text-blue-900 dark:text-blue-200 italic">
-                دكتور، إذا واجهت حالة غريبة، أنا مستعد لتفريغ ملفها وكتابة البحث بالكامل، وننشره سوياً
+                قل للطبيب المقيم: دكتور، إذا واجهت حالة غريبة، أنا مستعد لتفريغ ملفها وكتابة البحث بالكامل، وننشره سوياً
               </p>
             </div>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-              ابنِ علاقة جيدة معهم، واعرض عليهم هذا الاتفاق. هكذا تضمن تدفق أفكار دائماً، وتوفر على الطبيب تعب الكتابة، وتحصل أنت على فرصة النشر!
+              ابنِ علاقة جيدة معهم، واعرض عليهم هذا الاتفاق. هكذا تضمن تدفق أفكار دائماً، وتوفر على الطبيب تعب الكتابة، وتحصل أنت على فرصة النشر.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold text-[#0F3A7D] dark:text-blue-400 mb-3 flex items-center flex-wrap gap-2">الخطوة 2: الـ Informed Consent</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-              قبل أن تتحمس وتنسخ تحاليل المريض، يجب أن تأخذ توقيعه! المجلة سترفض بحثك فوراً إذا لم ترفق موافقة خطية من المريض تسمح بنشر حالته وصوره.
+              قبل أن تتحمس وتنسخ تحاليل المريض، يجب أن تأخذ موافقته. المجلة سترفض بحثك فوراً إذا لم ترفق موافقة خطية من المريض تسمح بنشر حالته وصوره.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold text-[#0F3A7D] dark:text-blue-400 mb-3 flex items-center flex-wrap gap-2">الخطوة 3: جمع البيانات (Data Collection)</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-3">
-              اجمع كل شيء: الـ History، والـ Exam، والـ Labs، والـ Imaging. ولكن انتبه: يجب أن تقوم بـ De-identification، أي تمسح أي شيء يكشف هوية المريض (اسمه، رقم ملفه، أو حتى اسمه على صور الأشعة).
+              اجمع كل شيء: الـ History، والـ Exam، والـ Labs، والـ Imaging. ولكن انتبه: يجب أن تقوم بـ De-identification، أي أن تمسح أي شيء يكشف هوية المريض (اسمه، رقم ملفه، أو حتى اسمه على صور الأشعة).
             </p>
           </div>
 
@@ -211,10 +211,10 @@ export function CrossSectionalSection() {
         defaultOpen={true}
       >
         <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-          تخيل أنك تأخذ صورة فوتوغرافية (Snapshot) لمرض معين أو سلوك صحي في مجتمع ما، في لحظة زمنية محددة. أنت هنا لا تتابع المرضى لسنوات، ولا تنبش في ماضيهم؛ أنت ببساطة تسأل: ما هو الوضع الآن؟
+          تخيل أن تأخذ صورة فوتوغرافية لمرض معين أو سلوك صحي في مجتمع ما، في لحظة زمنية محددة. أنت هنا لا تتابع المرضى لسنوات، ولا تبحث في ماضيهم؛ أنت ببساطة تسأل: ما هو الوضع الآن؟
         </p>
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          هذه الدراسات نستخدمها كثيراً لكي نقيس معدل انتشار مرض معين (Prevalence) أو نرى ما هي العوامل المرتبطة بسلوك صحي معين (مثلاً: لماذا يدخن طلاب الطب؟).
+          هذه الدراسات نستخدمها كثيراً لكي نقيس معدل انتشار مرض معين (Prevalence) أو نرى ما هي العوامل المرتبطة بسلوك صحي معين (مثلاً: لماذا يدخن طلاب الطب في الأردن؟).
         </p>
       </AccordionSection>
 
@@ -236,7 +236,7 @@ export function CrossSectionalSection() {
           <p>1. تحديد السؤال البحثي: ماذا تريد أن تقيس بالضبط؟</p>
           <p>2. اختيار الأداة (The Instrument): هل ستستخدم استبياناً موجوداً ومنشوراً سابقاً (Validated Questionnaire) أم ستصمم واحداً جديداً؟ (الأفضل دائماً استخدام استبيان Validated).</p>
           <p>3. تحديد العينة (Sampling): من هم الأشخاص الذين ستسألهم؟ وكيف ستصل إليهم؟</p>
-          <p>4. جمع البيانات: نشر الاستبيان والتأكد من وصولك للعدد المطلوب (Sample Size).</p>
+          <p>4. جمع البيانات: نشر الاستبيان والتأكد من وصولك للعدد المطلوب (Sample size) -انظر للأداة السابقة (أداة حساب حجم العينة)-.</p>
           <p>5. التحليل الإحصائي: وصف النتائج واستخراج الـ P-value للعلاقات بين المتغيرات.</p>
         </div>
         <ProTipBox>
@@ -260,7 +260,7 @@ export function SystematicReviewsSection() {
         defaultOpen={true}
       >
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          بدل أن تقوم بدراسة جديدة على مرضى، أنت هنا تجمع كل الدراسات التي أجريت في العالم عن موضوع معين، وتحللها كلها سوياً لكي تخرج بخلاصة نهائية. أنت هنا باحث الأبحاث!
+          بدل أن تقوم بدراسة جديدة على مرضى، أنت هنا تجمع كل الدراسات التي أجريت في العالم عن موضوع معين، وتحللها كلها سوياً لكي تخرج بخلاصة نهائية. أنت هنا باحث الأبحاث :)
         </p>
           <p className="text-sm text-gray-700 dark:text-gray-300 mt-3">
             الـ Systematic Review تعتبر أقوى دليل طبي (The Gold Standard) لأنها تعطينا الصورة الكاملة والنهائية.
@@ -293,7 +293,7 @@ export function SystematicReviewsSection() {
         </div>
         <ProTipBox>
           <p>
-            نصيحة العمر: لا تعمل وحدك! الـ Systematic Review يجب أن يعملها شخصان على الأقل بشكل مستقل (Independent Screening) لكي نضمن الدقة وعدم التحيز. ابحث عن فريق من زملائك المتحمسين ووزعوا المهام بينكم؛ العمل الجماعي فيها ممتع وأسرع بكثير.
+            نصيحة العمر (من مجرب): لا تعمل وحدك... الـ Systematic Review يجب أن يعملها شخصان على الأقل بشكل مستقل (Independent Screening) لكي نضمن الدقة وعدم التحيز. ابحث عن فريق من زملائك المتحمسين ووزعوا المهام بينكم؛ العمل الجماعي فيها ممتع وأسرع بكثير.
           </p>
         </ProTipBox>
       </AccordionSection>
@@ -308,7 +308,7 @@ export function RCTSection() {
       
       <AccordionSection title="ماذا تعني دراسات الـ RCTs؟" defaultOpen={true}>
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          هي الـ Randomized Controlled Trials. ببساطة، أنت كباحث تقوم بجمع عينة وتقسيم المرضى عشوائياً (Randomization) إلى مجموعتين: مجموعة تأخذ العلاج الجديد (Intervention Group)، ومجموعة تأخذ دواءً وهمياً أو العلاج التقليدي (Control Group). ثم تتابعهم لترى أيهما سيحقق نتائج أفضل.
+          الـ Randomized Controlled Trials. ببساطة، أنت كباحث تقوم بجمع عينة وتقسم المرضى عشوائياً (Randomization) إلى مجموعتين: مجموعة تأخذ العلاج الجديد (Intervention Group)، ومجموعة تأخذ دواءً وهمياً أو العلاج التقليدي (Control Group). ثم تتابعهم لترى أيهما سيحقق نتائج أفضل.
         </p>
       </AccordionSection>
 
