@@ -261,7 +261,7 @@ export function EvidencePyramid() {
               </div>
             ) : (
               <div className="text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400 italic leading-relaxed">
-                {isMobile ? 'انقر على طبقات الهرم لاكتشاف التفاصيل' : 'مرر الماوس أو انقر فوق طبقات الهرم لاكتشاف التفاصيل'}
+                {isMobile ? 'انقر على طبقات الهرم لاكتشاف التفاصيل' : 'اضغط على أي طبقة في الهرم للانتقال إلى شرحها المفصل'}
               </div>
             )}
           </div>
