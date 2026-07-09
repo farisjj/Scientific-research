@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Download, FileText, Table2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { Download, FileText, Table2, AlertCircle } from 'lucide-react';
 
 interface TemplateCard {
   id: string;
@@ -7,11 +7,10 @@ interface TemplateCard {
   description: string;
   icon: React.ReactNode;
   fileType: string;
-  action: () => void;
+  href: string;
 }
 
 export function ResearchTemplates() {
-  const [downloadStatus, setDownloadStatus] = useState<{ [key: string]: boolean }>({});
 
   // Function to generate Case Report Word Document
   const generateCaseReportDoc = () => {
@@ -144,8 +143,6 @@ export function ResearchTemplates() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    setDownloadStatus(prev => ({ ...prev, caseReport: true }));
-    setTimeout(() => setDownloadStatus(prev => ({ ...prev, caseReport: false })), 2000);
   };
 
   // Function to generate Data Extraction CSV
@@ -184,8 +181,6 @@ export function ResearchTemplates() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    setDownloadStatus(prev => ({ ...prev, dataExtraction: true }));
-    setTimeout(() => setDownloadStatus(prev => ({ ...prev, dataExtraction: false })), 2000);
   };
 
   const templates: TemplateCard[] = [
@@ -195,16 +190,7 @@ export function ResearchTemplates() {
       description: 'ملف مقسم حسب هيكل IMRAD جاهز للتعبئة لتوفير وقت التنسيق. يتضمن جميع الأقسام الضرورية من صفحة العنوان إلى المراجع.',
       icon: <FileText className="w-8 h-8" />,
       fileType: '.docx',
-      action: () => {
-        const link = document.createElement('a');
-        link.href = '/templates/BMJ_Clinical_Case_Report_Template.docx';
-        link.download = 'BMJ_Clinical_Case_Report_Template.docx';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setDownloadStatus(prev => ({ ...prev, caseReport: true }));
-        setTimeout(() => setDownloadStatus(prev => ({ ...prev, caseReport: false })), 2000);
-      },
+      href: '/templates/BMJ_Clinical_Case_Report_Template.docx',
     },
     {
       id: 'dataExtraction',
@@ -212,16 +198,7 @@ export function ResearchTemplates() {
       description: 'ملف مصمم لتفريغ بيانات الدراسات لعمل الـ Systematic Reviews و Meta-analysis. يحتوي على جميع الأعمدة الضرورية لجمع البيانات بشكل منظم.',
       icon: <Table2 className="w-8 h-8" />,
       fileType: '.xlsx',
-      action: () => {
-        const link = document.createElement('a');
-        link.href = '/templates/Systematic_Review_Data_Extraction_Sheet.xlsx';
-        link.download = 'Systematic_Review_Data_Extraction_Sheet.xlsx';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        setDownloadStatus(prev => ({ ...prev, dataExtraction: true }));
-        setTimeout(() => setDownloadStatus(prev => ({ ...prev, dataExtraction: false })), 2000);
-      },
+      href: '/templates/Systematic_Review_Data_Extraction_Sheet.xlsx',
     },
   ];
 
@@ -372,22 +349,10 @@ export function ResearchTemplates() {
             <p className="template-description">{template.description}</p>
             <div className="template-footer">
               <span className="file-type">{template.fileType}</span>
-              <button
-                onClick={template.action}
-                className={`download-btn ${downloadStatus[template.id] ? 'download-success' : ''}`}
-              >
-                {downloadStatus[template.id] ? (
-                  <>
-                    <CheckCircle2 className="w-4 h-4" />
-                    تم
-                  </>
-                ) : (
-                  <>
-                    <Download className="w-4 h-4" />
-                    تحميل
-                  </>
-                )}
-              </button>
+              <a href={template.href} download className="download-btn">
+                <Download className="w-4 h-4" />
+                تحميل
+              </a>
             </div>
           </div>
         ))}
