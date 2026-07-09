@@ -196,7 +196,7 @@ export function PracticalTipsSection() {
 
         <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">الـ Mentor</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400">حاول أن تجد دكتوراً استشارياً أو مقيماً شاطراً يوجهك. وجود مرشد يختصر عليك سنين من التخبط والضياع.</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">ابحث عن مرشد متمرس في البحث العلمي ليوجهك، سواء كان طالباً يسبقك بالخبرة، خريجاً حديثاً، أو طبيباً. وجود المرشد الصحيح يختصر عليك سنين من الضياع.</p>
         </div>
       </div>
     </section>
@@ -222,7 +222,7 @@ export function AuthorshipAndEthicsSection() {
         </ol>
         <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border-r-4 border-red-500 rounded">
           <p className="text-sm text-red-900 dark:text-red-200">
-            ممنوع مجاملة أحد بوضعه اسمه على البحث (Gift Authorship) لمجرد أنه صديقك أو دكتورك، وممنوع نسيان أحد عمل معك (Ghost Authorship). كن عادلاً.
+            ممنوع مجاملة أحد بوضع اسمه على البحث (Gift Authorship)، وممنوع تهميش من عمل معك (Ghost Authorship). إذا ساهم شخص في العمل لكنه لم يستوفِ شروط التأليف كاملة، فإن المكان الصحيح لتقدير جهده هو قسم الشكر والتقدير (Acknowledgments).
           </p>
         </div>
       </AccordionSection>

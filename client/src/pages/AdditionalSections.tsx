@@ -399,7 +399,7 @@ export function JournalsPublishingSection() {
           </div>
           <div className="flex items-center gap-3">
             <KeywordBadge>Indexing</KeywordBadge>
-            <p className="text-xs text-gray-600 dark:text-gray-400">تأكد أن المجلة موجودة في PubMed أو Scopus. إذا لم تكن موجودة، كأنك لم تنشر!</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">تأكد أن المجلة مصنفة (Indexed) في قواعد بيانات معتمدة مثل Scopus أو Web of Science. أيضا يُفضل جداً أن تكون مصنفة في PubMed، حيث تعتبر نقطة قوة إضافية لانتشار بحثك، لكنها ليست المعيار الوحيد لنجاح النشر.</p>
           </div>
           <div className="flex items-center gap-3">
             <KeywordBadge>Open Access</KeywordBadge>

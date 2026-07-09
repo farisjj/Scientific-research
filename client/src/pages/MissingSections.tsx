@@ -108,7 +108,7 @@ export function PredatoryJournalsSection() {
       </figure>
       <AccordionSection title="علامات المجلة النصابة">
         <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-          <li>ترسل لك رسائل بريد إلكتروني تطلب منك النشر عندهم.</li>
+          <li>ترسل لك رسائل بريد إلكتروني تطلب منك النشر عندهم، علامات تسويقية مبالغ فيها (نشر سريع/ Impact factor عالي).</li>
           <li>تقبل البحث بسرعة خيالية دون أي تعديلات.</li>
           <li>موقعهم شكله قديم ومليء بالأخطاء الإملائية.</li>
           <li>غير موجودين على <KeywordBadge>PubMed</KeywordBadge>.</li>
