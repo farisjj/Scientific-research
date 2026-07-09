@@ -1,5 +1,5 @@
-import React from 'react';
-import { Download, FileText, Table2, AlertCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Download, FileText, Table2, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 interface TemplateCard {
   id: string;
@@ -11,6 +11,12 @@ interface TemplateCard {
 }
 
 export function ResearchTemplates() {
+  const [downloadStatus, setDownloadStatus] = useState<{ [key: string]: boolean }>({});
+
+  const handleDownloadClick = (id: string) => {
+    setDownloadStatus(prev => ({ ...prev, [id]: true }));
+    setTimeout(() => setDownloadStatus(prev => ({ ...prev, [id]: false })), 2000);
+  };
 
   // Function to generate Case Report Word Document
   const generateCaseReportDoc = () => {
@@ -349,9 +355,23 @@ export function ResearchTemplates() {
             <p className="template-description">{template.description}</p>
             <div className="template-footer">
               <span className="file-type">{template.fileType}</span>
-              <a href={template.href} download className="download-btn">
-                <Download className="w-4 h-4" />
-                تحميل
+              <a
+                href={template.href}
+                download
+                className={`download-btn ${downloadStatus[template.id] ? 'download-success' : ''}`}
+                onClick={() => handleDownloadClick(template.id)}
+              >
+                {downloadStatus[template.id] ? (
+                  <>
+                    <CheckCircle2 className="w-4 h-4" />
+                    تم
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-4 h-4" />
+                    تحميل
+                  </>
+                )}
               </a>
             </div>
           </div>
