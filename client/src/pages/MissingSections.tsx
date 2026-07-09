@@ -98,7 +98,7 @@ export function PredatoryJournalsSection() {
         defaultOpen={true}
       >
         <p className="text-sm text-gray-700 dark:text-gray-300">
-          هي مجلات نصابة هدفها فقط أخذ مالك. تقبل أي شيء ترسله خلال يومين وتقول لك مبروك قُبل البحث ولكن ادفع 500 دولار. النشر فيها يضر الـ CV الخاص بك ويبين أنك لا تفهم كيف يسير العلم.
+          هي مجلات نصابة هدفها فقط أخذ أموالك. تقبل أي شيء ترسله خلال يومين وتقول لك مبروك قُبل البحث ولكن ادفع 500 دولار. النشر فيها يضر الـ CV الخاص بك ويبين أنك لا تفهم كيف تسير عملية البحث و النشر.
         </p>
       </AccordionSection>
 
@@ -154,7 +154,7 @@ export function AccessingPaidResearchSection() {
         defaultOpen={true}
       >
         <ul className="list-disc list-inside mt-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-          <li><KeywordBadge>ResearchGate</KeywordBadge>: أرسل رسالة مباشرة للمؤلف (Request full-text)، غالباً سيرسلها لك وهو سعيد.</li>
+          <li><KeywordBadge>ResearchGate</KeywordBadge>: أرسل رسالة مباشرة للمؤلف (Request full-text)، غالباً سيرسل البحث لك وهو سعيد.</li>
           <li><KeywordBadge>Google Scholar</KeywordBadge>: يوفر العديد من الأبحاث المغلقة (Closed Access) مجاناً عبر روابط نسخ بديلة، والتي قد لا تجدها في مكان آخر.</li>
           <li><KeywordBadge>Unpaywall</KeywordBadge>: إضافة للمتصفح تبحث لك عن نسخ مجانية وقانونية للبحث.</li>
           <li><KeywordBadge>Sci-Hub</KeywordBadge>: الأداة الأشهر عالمياً لتخطي الحواجز المدفوعة. (ملاحظة هامة: الأداة لا تعمل غالباً على الأبحاث المنشورة من عام 2022 وما بعده). <a href="https://sci-hub.box" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-bold inline-flex items-center gap-1">زيارة الموقع ←</a></li>

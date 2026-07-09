@@ -59,7 +59,7 @@ export function ResearchEthicsSection() {
 
         <ProTipBox>
           <p>
-            أكبر غلطة يرتكبها الطلاب: أنهم يبدأون بجمع البيانات ثم يطلبون الـ IRB. هذا انتحار بحثي! أي بيانات تجمعها قبل تاريخ الموافقة تعتبر غير قانونية ولا تستطيع استخدامها في النشر.
+            من الأخطاء الشائعة والمحفوفة بالمخاطر: البدء بجمع البيانات قبل صدور موافقة الـ IRB. رغم أن البعض قد يتجاوز هذه النقطة محلياً وتمضي أبحاثهم، إلا أن المجلات العالمية المرموقة تدقق بشدة في التواريخ. إذا اكتشفت المجلة أن بياناتك جُمعت قبل تاريخ الموافقة الرسمية، قد يتم رفض بحثك فوراً. لا تخاطر بجهدك، واجعل الموافقة دائماً تسبق جمع البيانات.
           </p>
         </ProTipBox>
       </AccordionSection>
@@ -77,7 +77,7 @@ export function ReferenceManagementSection() {
         defaultOpen={true}
       >
         <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-          تخيل أن لديك 50 مرجعاً وتريد كتابتها يدوياً وتنسيقها.. كابوس! برامج إدارة المراجع تقوم بهذا العمل عنك بضغطة زر. تنظم لك الـ Papers التي قرأتها وتقوم بعمل الـ Citations داخل الـ Word تلقائياً.
+          تخيل أن لديك 50 مرجعاً وتريد كتابتها يدوياً وتنسيقها... برامج إدارة المراجع تقوم بهذا العمل عنك بضغطة زر. تنظم لك الـ Papers التي قرأتها وتقوم بعمل الـ Citations داخل الـ Word تلقائياً.
         </p>
       </AccordionSection>
 
@@ -115,7 +115,7 @@ export function ReferenceManagementSection() {
 
         <ProTipBox>
           <p>
-            نصيحة تقنية: دائماً تفقد الـ <KeywordBadge>Author Guidelines</KeywordBadge> الخاصة بالمجلة قبل أن تبدأ. إذا كتبت كل مراجعك بنمط APA والمجلة تريد Vancouver، ستتعب كثيراً! ولكن لو كنت تستخدم برنامج مراجع، التغيير يستغرق ثانية واحدة فقط.
+            دائماً تفقد الـ <KeywordBadge>Author Guidelines</KeywordBadge> الخاصة بالمجلة قبل أن تبدأ. إذا كتبت كل مراجعك بنمط APA والمجلة تريد Vancouver، ستتعب كثيراً. ولكن لو كنت تستخدم برنامج مراجع، التغيير يستغرق ثانية واحدة فقط.
           </p>
         </ProTipBox>
       </AccordionSection>
@@ -145,7 +145,7 @@ export function CommonMistakesSection() {
 
           <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-r-4 border-red-400">
             <strong className="text-red-600 dark:text-red-400">الـ Selection Bias:</strong>
-            <p className="mt-2">أن تختار فقط المرضى الذين تعرف أنهم سيعطونك النتيجة التي تريدها. هذا يفشل البحث تماماً.</p>
+            <p className="mt-2">أن تختار فقط المرضى الذين تعرف أنهم سيعطونك النتيجة التي تريدها. هذا يدمّر البحث تماماً.</p>
           </div>
         </div>
       </AccordionSection>
@@ -165,7 +165,7 @@ export function CommonMistakesSection() {
 
         <ProTipBox>
           <p>
-            إذا كنت تائهاً في الإحصاء (مثلنا جميعاً في البداية): لا تخجل من طلب المساعدة! تواصل مع دكاترة الجامعة أو طلاب أكبر منك لديهم خبرة. استشارة واحدة قد تنقذ بحثك من الرفض النهائي.
+            إذا كنت تائهاً في الإحصاء (مثلنا جميعاً في البداية): لا تخجل من طلب المساعدة. تواصل مع دكاترة الجامعة أو طلاب أكبر منك لديهم خبرة. استشارة واحدة قد تنقذ بحثك من الرفض.
           </p>
         </ProTipBox>
       </AccordionSection>
@@ -191,7 +191,7 @@ export function PracticalTipsSection() {
 
         <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
           <h4 className="font-bold text-[#0F3A7D] dark:text-blue-400 mb-3">الصبر (Patience)</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400">النشر يستغرق وقتاً؛ من شهور لسنة أحياناً. لا تحبط إذا رُفضت أول مرة، هذا جزء طبيعي من اللعبة. عدل وأرسل لمجلة ثانية.</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">النشر يستغرق وقتاً؛ من شهور لسنة أحياناً. لا تحبط إذا رُفضت أول مرة، هذا جزء طبيعي من العملية. عدّل وأرسل لمجلة ثانية.</p>
         </div>
 
         <div className="p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 category-card">
@@ -222,7 +222,7 @@ export function AuthorshipAndEthicsSection() {
         </ol>
         <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border-r-4 border-red-500 rounded">
           <p className="text-sm text-red-900 dark:text-red-200">
-            ممنوع مجاملة أحد بوضعه اسمه على البحث (Gift Authorship) لمجرد أنه صديقك أو دكتورك، وممنوع نسيان أحد عمل معك (Ghost Authorship). كن عادلاً!
+            ممنوع مجاملة أحد بوضعه اسمه على البحث (Gift Authorship) لمجرد أنه صديقك أو دكتورك، وممنوع نسيان أحد عمل معك (Ghost Authorship). كن عادلاً.
           </p>
         </div>
       </AccordionSection>
